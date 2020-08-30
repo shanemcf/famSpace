@@ -95,8 +95,11 @@ async function createFamFormHandler(event) {
 }
 
 
-document.querySelector('.is-fam-form').addEventListener('submit', joinFamFormHandler);
+
+
+document.querySelector('#join-fam').addEventListener('click', joinFamFormHandler);
 
 document.querySelector('#generate-key').addEventListener('click', famKeyPPopulator)
 
-document.querySelector('.new-fam-form').addEventListener('submit', createFamFormHandler);
+document.querySelector('#create-fam').addEventListener('submit', createFamFormHandler);
+

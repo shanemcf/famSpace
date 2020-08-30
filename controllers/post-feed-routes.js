@@ -124,14 +124,17 @@ router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
+
+
 // fam up
 router.get('/fam-up', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
     return;
   }
-
-  res.render('fam-up');
+  else{
+    res.render('fam-up');
+  }
 });
 
 
