@@ -61,7 +61,7 @@ User.init(
         key: 'id'
       }
     },
-    fam: {
+    family: {
       type: DataTypes.JSON,
       allowNull: true
     }
