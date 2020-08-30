@@ -10,8 +10,9 @@ router.get('/', (req, res) => {
     order: [['created_at', 'DESC']],
     attributes: [
       'id',
-      'title',
-      'post_content',
+      'caption',
+      'imageURL',
+      'fam_id',
       'created_at'
     ],
     include: [
@@ -51,8 +52,9 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'title',
-      'post_content',
+      'caption',
+      'imageURL',
+      'fam_id',
       'created_at'
     ],
     include: [
@@ -93,8 +95,8 @@ router.get('/:id', (req, res) => {
 // POST (create) a post
 router.post('/', withAuth, (req, res) => {
   Post.create({
-    title: req.body.title,
-    post_content: req.body.post_content,
+    caption: req.body.caption,
+    imageURL: req.body.imageURL,
     user_id: req.session.user_id
   })
     .then((newPost) => res.json(newPost))
@@ -106,13 +108,11 @@ router.post('/', withAuth, (req, res) => {
 
 
 
-
 // PUT (update) a post title and/or content
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
-      title: req.body.title,
-      post_content: req.body.post_content
+      caption: req.body.caption
     },
     {
       where: {
