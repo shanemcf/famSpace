@@ -51,13 +51,6 @@ Post.init(
         model: 'user',
         key: 'id'
       }
-    },
-    fam_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'fam',
-        key: 'id'
-      }
     }
   },
   {

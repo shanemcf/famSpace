@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
       'id',
       'caption',
       'imageURL',
-      'fam_id',
       'created_at'
     ],
     order: [['created_at', 'DESC']],
@@ -58,7 +57,6 @@ router.get('/Post/:id', (req, res) => {
       'id',
       'caption',
       'imageURL',
-      'fam_id',
       'created_at'
     ],
     include: [

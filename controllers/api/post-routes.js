@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
       'id',
       'caption',
       'imageURL',
-      'fam_id',
       'created_at'
     ],
     include: [
@@ -54,7 +53,6 @@ router.get('/:id', (req, res) => {
       'id',
       'caption',
       'imageURL',
-      'fam_id',
       'created_at'
     ],
     include: [
