@@ -1,0 +1,33 @@
+<section>
+    <div>
+        <h2>Dashboard</h2>
+    </div>
+    <div>
+        <a href="" id="userImage"></a>
+    </div>
+    <div>
+        <h3> Hi, {{user.first}}</h3>
+    </div>
+</section>
+
+<section>
+    <form class="dash-form">
+        <div>
+            <button class="card-button" type="submit" id="update-phone-number"><i class="icofont-edit"></i></button>
+            <input class="card-input" type="tel" placeholder="(555)-555-5555" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="phone-number-dashboard" />
+        </div>
+
+        <div>
+            <button class="card-button" type="submit" id="update-email"><i class="icofont-edit"></i></button>
+            <input class="card-input" type="email" placeholder={{user.email}} id="email-dashboard" />
+        </div>
+
+        <div>
+            <button class="card-button" type="submit" id="update-address"><i class="icofont-edit"></i></button>
+            <input class="card-input" type="text" placeholder="123 S Main St.\n Apt. #221 Memphis,\n TN, 38103"
+                id="address-dashboard" />
+        </div>
+    </form>
+</section>
+
+<script src="/javascript/dashboard-self.js"></script>
