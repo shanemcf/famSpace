@@ -1,33 +1,51 @@
-<section>
-    <div>
+<section class="container">
+    <div class="row justify-content-center">
         <h2>Dashboard</h2>
     </div>
-    <div>
+    <div class="row justify-content-start">
         <a href="" id="userImage"></a>
     </div>
-    <div>
+    <div class="row justify-content-start">
         <h3> Hi, {{user.first}}</h3>
     </div>
-</section>
 
-<section>
-    <form class="dash-form">
-        <div>
-            <button class="card-button" type="submit" id="update-phone-number"><i class="icofont-edit"></i></button>
-            <input class="card-input" type="tel" placeholder="(555)-555-5555" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="phone-number-dashboard" />
-        </div>
 
-        <div>
-            <button class="card-button" type="submit" id="update-email"><i class="icofont-edit"></i></button>
-            <input class="card-input" type="email" placeholder={{user.email}} id="email-dashboard" />
-        </div>
+    <div class="row justify-content-center">
+        <form class="dash-form">
+            <div>
+                <button class="card-button" type="submit" id="update-phone-number"><i class="icofont-edit"></i></button>
+                <input class="card-input" type="tel" placeholder="(555)-555-5555" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    id="phone-number-dashboard" />
+            </div>
 
-        <div>
-            <button class="card-button" type="submit" id="update-address"><i class="icofont-edit"></i></button>
-            <input class="card-input" type="text" placeholder="123 S Main St.\n Apt. #221 Memphis,\n TN, 38103"
-                id="address-dashboard" />
-        </div>
-    </form>
+            <div>
+                <button class="card-button" type="submit" id="update-email"><i class="icofont-edit"></i></button>
+                <input class="card-input" type="email" placeholder={{user.email}} id="email-dashboard" />
+            </div>
+
+            <div>
+                <button class="card-button" type="submit" id="update-address"><i class="icofont-edit"></i></button>
+                <input class="card-input" type="text" placeholder="123 S Main St.\n Apt. #221 Memphis,\n TN, 38103"
+                    id="address-dashboard" />
+            </div>
+        </form>
+    </div>
+
+    <div class="row justify-content-center top-buffer">
+        <form class="new-post-form">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                </div>
+                <textarea name="image" class="form-control" placeholder="An image upload would go here." aria-label="With textarea"></textarea>
+                <textarea name="caption" class="form-control" placeholder="An caption would go here."aria-label="With textarea"></textarea>
+            </div>
+        </form>
+    </div>
 </section>
 
 <script src="/javascript/dashboard-self.js"></script>
+<script src="/javascript/add-post.js"></script>
