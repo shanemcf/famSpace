@@ -25,9 +25,19 @@ User.init(
       // turn on auto increment
       autoIncrement: true
     },
-    // define a username column
-    username: {
+    //define a first name column
+    first: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+    //define a last name column
+    last:{
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    //define a birthdate column
+    birthdate: {
+      type: DataTypes.DATE,
       allowNull: false
     },
     // define an email column
@@ -41,6 +51,11 @@ User.init(
         isEmail: true
       }
     },
+    // define a username column
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     // define a password column
     password: {
       type: DataTypes.STRING,
@@ -50,10 +65,7 @@ User.init(
         len: [4]
       }
     },
-    birthdate: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
+    
     fam_id: {
       type: DataTypes.INTEGER,
       references: {
