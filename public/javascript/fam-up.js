@@ -94,9 +94,15 @@ async function createFamFormHandler(event) {
     }
 }
 
+function navigateToFam(){
+    document.location.replace('/fam-up/');
+}
+
 
 document.querySelector('.is-fam-form').addEventListener('submit', joinFamFormHandler);
 
 document.querySelector('#generate-key').addEventListener('click', famKeyPPopulator)
 
-document.querySelector('.new-fam-form').addEventListener('submit', createFamFormHandler);
+document.querySelector('#create-fam').addEventListener('submit', createFamFormHandler);
+
+document.querySelector('#fam-nav').addEventListener('submit', navigateToFam);
