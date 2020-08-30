@@ -124,5 +124,15 @@ router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
+// fam up
+router.get('/fam-up', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('fam-up');
+});
+
 
 module.exports = router;

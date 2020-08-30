@@ -1,6 +1,43 @@
-const {famKey} = require('./famKey.js');
+let displayKeyEl = document.querySelector('#generated-key');
 
-const displayKeyEl = document.querySelector('#generated-key');
+//let { famKey } = require ('./famKey');
+
+const adj = ['adaptable', 'adventurous', 'affectionate', 'ambitious', 'amiable',
+  'compassionate', 'considerate', 'courageous', 'courteous', 'diligent',
+  'empathetic', 'exuberant', 'frank', 'generous', 'gregarious',
+  'impartial', 'intuitive', 'inventive', 'passionate', 'persistent',
+  'philosophical', 'practical', 'rational', 'reliable', 'resoureful',
+  'sensible', 'sincere', 'sympathetic', 'unassuming', 'witty'];
+
+function randInt(){
+
+  let randNum = (Math.floor(Math.random() * 100)).toString();
+
+  if (randNum.length < 2) { randNum = '0' + randNum }
+
+  return randNum;
+
+}
+
+function randAdj(){
+
+  let x = Math.floor(Math.random() * 30);
+
+  return adj[x];
+
+}
+
+function famKey(surname) {
+
+  if(surname.slice(-1) != 's'){
+    surname += 's'
+  }
+
+  let uId = randAdj() + surname + randInt();
+
+  return uId;
+
+}
 
 async function joinFamFormHandler(event) {
     event.preventDefault();
@@ -28,8 +65,10 @@ function famKeyPPopulator(event){
     event.preventDefault();
 
     let familyName = document.querySelector('#fam-name').value.trim();
-    
-    displayKeyEl = famKey(familyName)
+
+    if (familyName){
+        displayKeyEl.textContent = famKey(familyName);
+    }
 
 }
 
@@ -58,6 +97,6 @@ async function createFamFormHandler(event) {
 
 document.querySelector('.is-fam-form').addEventListener('submit', joinFamFormHandler);
 
-document.getElementById('.generate-key').addEventListener('click', famKeyPPopulator)
+document.querySelector('#generate-key').addEventListener('click', famKeyPPopulator)
 
 document.querySelector('.new-fam-form').addEventListener('submit', createFamFormHandler);
