@@ -2,12 +2,12 @@
   <div>
     <h3>Image will go here</h3>
     <p>
-      <i>posted by <span style="font-weight:bolder">{{blogger.username}}</span> on {{format_date created_at}}</i>
+      <i>posted by <span style="font-weight:bolder">{{blogger.username}}</span> on {{created_at}}</i>
       <br>
       <br>
       {{caption}}</p>
   </div>
   <div class="meta">
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    <a href="/post/{{id}}">{{comments.length}} {{ comments.length}}</a>
   </div>
 </article>
