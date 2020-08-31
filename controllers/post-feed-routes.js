@@ -124,7 +124,29 @@ router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
+// homepage
+router.get('/homepage', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  else{
+    res.render('homepage');
+  }
+  
+});
 
+// dashboard
+router.get('/dashboard', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  else{
+    res.render('dashboard');
+  }
+  
+});
 
 // fam up
 router.get('/fam-up', (req, res) => {

@@ -1,6 +1,6 @@
 function navigateToFam(){
   event.preventDefault();
-  console.log("We've been clicked!")
+  //console.log("We've been clicked!")
   document.location.replace('/fam-up/');
 }
 

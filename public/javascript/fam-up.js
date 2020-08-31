@@ -54,7 +54,7 @@ async function joinFamFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard/');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
@@ -87,7 +87,7 @@ async function createFamFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard/');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }

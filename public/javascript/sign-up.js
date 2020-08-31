@@ -24,7 +24,7 @@ async function signupFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/fam-up/');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
