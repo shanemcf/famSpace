@@ -93,7 +93,7 @@ router.get('/:id', (req, res) => {
 
 
 // POST (create) a post
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   Post.create({
     caption: req.body.caption,
     imageURL: req.body.imageURL,

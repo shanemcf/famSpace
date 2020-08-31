@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const { Fam } = require('../../models');
 
-// POST (create) a post
+// POST (create) a fam
 router.post('/', (req, res) => {
+  console.log('POST/fams - create a fam route.')
   Fam.create({
-    famKey: req.body.famKey
+    famKey: req.body.generatedFamKey
   })
     .then((newFam) => res.json(newFam))
     .catch((err) => {
