@@ -14,10 +14,31 @@
         <h4 class="card-header">Birthdate</h4>
 
         <div>
-            <input class="card-input" type="text" placeholder="MM/DD/YYYY" id="birthdate-signup" />
+            <select id="birth-month-signup" > 
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
         </div>
 
-         <div>
+        <div>
+            <input class="card-input" type="text" placeholder="DD" id="birth-day-signup" maxlength="2" />
+        </div>
+
+        <div>
+            <input class="card-input" type="text" placeholder="YYYY" id="birth-year-signup" maxlength="4" />
+        </div>
+
+        <div>
             <input class="card-input" type="email" placeholder="email"id="email-signup" />
         </div>
 
