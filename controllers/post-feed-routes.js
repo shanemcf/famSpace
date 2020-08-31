@@ -149,6 +149,17 @@ router.get('/dashboard', (req, res) => {
 });
 
 // fam up
+router.get('/add-post', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  else{
+    res.render('add-post');
+  }
+});
+
+// fam up
 router.get('/fam-up', (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');
@@ -156,6 +167,17 @@ router.get('/fam-up', (req, res) => {
   }
   else{
     res.render('fam-up');
+  }
+});
+
+// fam up
+router.get('/events', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  else{
+    res.render('events');
   }
 });
 

@@ -28,7 +28,9 @@
                         {{#if loggedIn}}
                         <a href="/dashboard">dashboard</a>
                         <button id="logout" class="btn">logout</button>
+                        <button id="add-post-nav" class="btn">create a post</button>
                         <button id="fam-nav" class="btn">Join or Create a fam</button>
+                        <button id="events-nav" class="btn">view upcoming events</button>
                         {{else}}
                         <a href="/login">login</a>
                         {{/if}}
@@ -46,7 +48,7 @@
 
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
-    <script src="/javascript/fam-nav.js"></script>
+    <script src="/javascript/home-nav.js"></script>
     {{/if}}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
