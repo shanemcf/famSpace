@@ -1,40 +1,35 @@
-<section class="card">
-    <form class="is-fam-form">
-
-        <h4>Join a fam</h4>
-
-        <div>
-            <input class="card-input" type="text" placeholder="Enter your famKey" id="fam-key" />
+<section class="row justify-content-center">
+    <div class="card col-xs-12 col-sm-8 col-md-4 text-center">
+        <div class="card-body">
+            <form class="is-fam-form">
+                <h4>Join a fam</h4>
+                <input type="text" class="form-control" placeholder="Enter your famKey" id="fam-key" />
+                <br>
+                <button class="btn" type="submit" id="join-fam">Join</button>
+            </form>
         </div>
-
-        <div>
-            <button class="card-button" type="submit">CTA</button>
-        </div>
-    </form>
+    </div>
 </section>
 
-<section class="card">
-    <form class="new-fam-form">
-        
-        <h4>Create a fam</h4>
+<section class="row top-buffer justify-content-center">
+    <div class="card col-xs-12 col-md-4 text-center">
+        <div class="card-body">
+            <form class="new-fam-form">
+                <h4>Create a fam</h4>
+                <div>
+                    <input class="form-control" type="text" placeholder="What's your family's name?" id="fam-name" />
+                    <br>
+                    <button class="btn" type="submit" id="generate-key">Generate a famKey</button>
+                </div>
+                <br>
+                <p id="generated-key">Your Key</p>
 
-        <div>
-            <input class="card-input" type="text" placeholder="What's your family's name?" id="fam-name" />
+                <button class="btn" type="button" id="create-fam">Done</button>
+            </form>
         </div>
-
-        <div>
-            <button class="card-button" type="submit" id="generate-key">generate a fam key</button>
-        </div>
-
-        <div>
-            <p id="generated-key">Your Key</p>
-        </div>
-
-        <div>
-            <button class="card-button" type="submit" id="create-fam">done</button>
-        </div>
-    </form>
+    </div>
 </section>
+
 
 <script src="/javascript/fam-up.js"></script>
-<!--<script type="module" src="/javascript/famKey.js"></script>-->
+<script type="module" src="/javascript/famKey.js"></script>

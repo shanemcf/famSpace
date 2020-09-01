@@ -124,14 +124,61 @@ router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
-// fam up
-router.get('/fam-up', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
+// homepage
+router.get('/homepage', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
     return;
   }
+  else{
+    res.render('/');
+  }
+  
+});
 
-  res.render('fam-up');
+// dashboard
+router.get('/dashboard', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  else{
+    res.render('dashboard');
+  }
+  
+});
+
+// fam up
+router.get('/add-post', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  else{
+    res.render('add-post');
+  }
+});
+
+// fam up
+router.get('/fam-up', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  else{
+    res.render('fam-up');
+  }
+});
+
+// fam up
+router.get('/events', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  else{
+    res.render('events');
+  }
 });
 
 

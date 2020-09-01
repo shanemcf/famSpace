@@ -2,6 +2,7 @@ const Fam = require('./Fam');
 const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
+const Contact = require('./Contact');
 
 
 
@@ -51,6 +52,10 @@ Fam.hasMany(User, {
   foreignKey: 'fam_id'
 });
 
+Contact.belongsTo(User, {
+  foreignKey: 'id'
+});
 
 
-module.exports = { Fam, User, Post, Comment };
+
+module.exports = { Fam, User, Post, Comment, Contact };

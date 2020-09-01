@@ -1,0 +1,93 @@
+<section>
+    <div>
+        <h2>Dashboard</h2>
+    </div>
+    <div>
+        <a href="" id="userImage"></a>
+    </div>
+    <div>
+        <h3> Hi, {{user.first}}</h3>
+    </div>
+</section>
+
+<section>
+    <form class="dash-form">
+        <div>
+            <button class="card-button" type="submit" id="update-phone-number"><i class="icofont-edit"></i></button>
+            <input class="card-input" type="tel" placeholder="(555)-555-5555" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="phone-number-dashboard" />
+        </div>
+
+        <div>
+            <button class="card-button" type="submit" id="update-email"><i class="icofont-edit"></i></button>
+            <input class="card-input" type="email" placeholder={{user.email}} id="email-dashboard" />
+        </div>
+
+        <div>
+            <button class="card-button" type="submit" id="update-address"><i class="icofont-edit"></i></button>
+            <input class="card-input" type="text" placeholder="123 S Main St"
+                id="address-dashboard-street" />
+            <input class="card-input" type="text" placeholder="Apt. #221"
+                id="address-dashboard-street-sub" />
+            <input class="card-input" type="text" placeholder="Memphis"
+                id="address-dashboard-city" />
+            <select id="address-dashboard-state" >
+                <option value=""disabled selected>Select Your State</option> 
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AZ">AZ</option>
+                <option value="AR">AR</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DE">DE</option>
+                <option value="DC">DC</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="IA">IA</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="ME">ME</option>
+                <option value="MD">MD</option>
+                <option value="MA">MA</option>
+                <option value="MI">MI</option>
+                <option value="MO">MO</option>
+                <option value="MT">MT</option>
+                <option value="NE">NE</option>
+                <option value="NV">NV</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NY">NY</option>
+                <option value="NC">MC</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="PR">PR</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">MD</option>
+                <option value="VA">VA</option>
+                <option value="VI">VI</option>
+                <option value="WA">WA</option>
+                <option value="WV">WV</option>
+                <option value="WI">WI</option>
+                <option value="WY">WY</option>
+            </select>
+            <input class="card-input" type="text" placeholder="38103"
+                id="address-dashboard-zip" />
+        </div>
+    </form>
+</section>
+
+<script src="/javascript/dashboard.js"></script>

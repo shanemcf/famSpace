@@ -1,0 +1,65 @@
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  /* color: rgb(244, 244, 244); */
+  background-image: url("../images/blu_stripes_@2X.png");
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: rgb(72, 72, 72, .50);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 40px;
+  background-image: url("../images/blu_stripes_@2X.png");
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+footer {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+}
+
+.top-buffer { 
+  margin-top: 20px; 
+}
+
+.navbar-brand {
+  font-size: 2em;
+  font-family: 'Leckerli One';
+}
+
+.nav-item {
+  margin-right: 1em;
+  align-self: flex-end;
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: .5%;
+  opacity: .6;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+

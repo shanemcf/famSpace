@@ -88,7 +88,7 @@ router.post('/', (req, res) => {
 
 
 // PUT /api/Users/1
-router.put('/:id', userAuth, (req, res) => {
+router.put('/:id', (req, res) => {
 	User.update(req.body, {
 		individualHooks: true,
 		where: {
@@ -110,7 +110,7 @@ router.put('/:id', userAuth, (req, res) => {
 
 
 
-router.delete('/:id', userAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
 	Comment.destroy({
 		where: {
       user_id: req.params.id
