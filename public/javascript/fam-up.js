@@ -99,16 +99,9 @@ function navigateToFam(){
     document.location.replace('/fam-up/');
 }
 
-
-
-
 document.querySelector('#join-fam').addEventListener('click', joinFamFormHandler);
 
 document.querySelector('#generate-key').addEventListener('click', famKeyPPopulator)
 
-<<<<<<< HEAD
-document.querySelector('#create-fam').addEventListener('submit', createFamFormHandler);
-=======
 document.querySelector('#create-fam').addEventListener('click', createFamFormHandler);
 
->>>>>>> a16202c4ff026d220ee9104c4ba9773508b693cc
