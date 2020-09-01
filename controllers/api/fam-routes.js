@@ -1,6 +1,39 @@
 const router = require('express').Router();
 const { Fam } = require('../../models');
 
+//GET /api/fam (retrieve all fams)
+router.get('/', (req, res) => {
+
+  // Access our Fam model and run .findAll() method)
+  Fam.findAll()
+    .then((dbFamData) => res.json(dbFamData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+// GET /api/fam/1 (retrieve one fam by id)
+router.get('/:id', (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then((dbFamData) => {
+      if (!dbFamData) {
+        res.status(404).json({ message: 'Family not found.' });
+        return;
+      }
+      res.json(dbFamData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // POST (create) a fam
 router.post('/', (req, res) => {
   console.log('POST/fams - create a fam route.')
