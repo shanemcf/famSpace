@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../models');
+const { User, Contact } = require('../models');
 const withAuth = require('../utils/auth'); // Authenticate user session middleware.
 
+/*
 router.get('/', (req, res) => {
   Post.findAll({
     where: {
@@ -50,8 +51,6 @@ router.get('/', (req, res) => {
     });
 });
 
-
-
 router.get('/edit/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -89,6 +88,47 @@ router.get('/edit/:id', (req, res) => {
       const post = dbPostData.get({ plain: true });
       res.render('edit-post', {
         post,
+        loggedIn: true
+      })
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+*/
+
+//GET user logged in for dashboard data population
+router.get('/user/:id', (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'first',
+      'last',
+      'birthdate',
+      'email',
+      'username',
+      'fam_id'
+    ],
+    include: [
+      {
+        model: Contact,
+        attributes: [
+          'id', 
+          'telephone', 
+          'address', 
+          'user_id']
+      }
+    ]
+  })
+    .then(dbUserData => {
+      // serialize data before passing to template
+      const user = dbUserData.get({ plain: true });
+      res.render('dashboard', {
+        user,
         loggedIn: true
       })
     })

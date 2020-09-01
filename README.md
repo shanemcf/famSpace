@@ -20,6 +20,6 @@ A social media platform that caters to families.
   * DB_USER='Your MySQL username'
   * DB_PW='Your MySQL Password'
   * SECRET="Your Secret"
-* Use npm to install mysql2, sequelize, express, express-handlebars, express-session, connect-session-sequelize, and bcrypt.
+* Use npm to install mysql2, sequelize, express, express-handlebars, express-session, connect-session-sequelize, and bcrypt, express-fileupload.
 * Open MySQL and create the required data base by typing "source db\schema.sql".
 * Type "npm start" to run the express server and see the results by entering "http://localhost:3001" sans the quotes in your browser
