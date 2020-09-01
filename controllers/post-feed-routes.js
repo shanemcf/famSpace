@@ -131,7 +131,7 @@ router.get('/homepage', (req, res) => {
     return;
   }
   else{
-    res.render('homepage');
+    res.render('/');
   }
   
 });

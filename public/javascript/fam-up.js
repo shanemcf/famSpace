@@ -95,8 +95,9 @@ async function createFamFormHandler(event) {
     }
 }
 
-
-
+function navigateToFam(){
+    document.location.replace('/fam-up/');
+}
 
 document.querySelector('#join-fam').addEventListener('click', joinFamFormHandler);
 

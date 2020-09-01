@@ -1,13 +1,14 @@
 async function phoneFormHandler(event) {
     event.preventDefault();
 
-    const phone = document.querySelector('#phone-dashboard').value.trim();
+    const telephone = document.querySelector('#phone-dashboard').value.trim();
+    const id = 1;
 
-    if (phone) {
-        const response = await fetch('/api/users', {
+    if (telephone) {
+        const response = await fetch(`/api/contact/${id}`, {
             method: 'put',
             body: JSON.stringify({
-                phone
+                telephone
             }),
             headers: { 'Content-Type': 'application/json' }
         });
@@ -46,9 +47,10 @@ async function addressFormHandler(event) {
     event.preventDefault();
 
     const address = document.querySelector('#address-dashboard').value.trim();
+    const id = 1;
 
     if (firstName && lastName && birthday && username && email && password) {
-        const response = await fetch('/api/users', {
+        const response = await fetch(`/api/contact/${id}`, {
             method: 'put',
             body: JSON.stringify({
                 address

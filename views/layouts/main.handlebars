@@ -10,43 +10,52 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/stylesheets/style.css">
     {{!-- <link rel="stylesheet" href="/assets/stylesheets/icofont.min.css"> --}}
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"> {{!-- General page font --}}
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet"> {{!-- Brand font? --}}
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet"> {{!-- Brand font? --}}
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            {{!-- <i class="icofont-users-social"></i> --}}
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <h1>
-                            <a class="text-decoration-none" href="/">famSpace</a>
-                        </h1>
-                        {{#if loggedIn}}
-                        <a href="/dashboard">dashboard</a>
-                        <button id="logout" class="btn">logout</button>
-                        <button id="add-post-nav" class="btn">create a post</button>
-                        <button id="fam-nav" class="btn">Join or Create a fam</button>
-                        <button id="events-nav" class="btn">view upcoming events</button>
-                        {{else}}
-                        <a href="/login">login</a>
-                        {{/if}}
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <main class="container">
-            {{{ body }}}
-        </main>
-        <footer>
-            famSpace &#169;2020
-        </footer>
-    </div>
+    <nav class="navbar justify-content-between navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">famSpace</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-sm" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link btn-sm" id="logout">Logout</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link btn-sm" id="add-post-nav">Create a Post</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link btn-sm" id="fam-nav">Join or Create a Fam</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link btn-sm" id="events-nav">View Upcoming Events</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    {{#if loggedIn}}
+    <main class="container">
+        {{{ body }}}
+    </main>
+    <footer>
+        famSpace &#169;2020
+    </footer>
+
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/home-nav.js"></script>
-    {{/if}}
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
