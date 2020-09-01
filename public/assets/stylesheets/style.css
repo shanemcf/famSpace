@@ -58,5 +58,8 @@ footer {
   opacity: .6;
 }
 
+.card {
+  border-radius: 15px;
+}
 
 
