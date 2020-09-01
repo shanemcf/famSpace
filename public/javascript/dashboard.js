@@ -46,10 +46,22 @@ async function emailFormHandler(event) {
 async function addressFormHandler(event) {
     event.preventDefault();
 
-    const address = document.querySelector('#address-dashboard').value.trim();
+    const addressStreet = document.querySelector('#address-dashboard-street').value.trim();
+    const addressStreetSub = document.querySelector('#address-dashboard-street').value.trim();
+    const addressCity = document.querySelector('#address-dashboard-street').value.trim();
+    const addressState = document.querySelector('#address-dashboard-street').value.trim();
+    const addressZip = document.querySelector('#address-dashboard-street').value.trim();
     const id = 1;
+    let address = "";
 
-    if (firstName && lastName && birthday && username && email && password) {
+    if(addressStreetSub){
+        address = addressStreet + '|' + addressStreetSub + '|' + addressCity +'|' + addressState + '|' + addressZip;
+    }
+    else{
+        address = addressStreet + '|NA|' + addressCity +'|' + addressState + '|' + addressZip;
+    }  
+
+    if (address) {
         const response = await fetch(`/api/contact/${id}`, {
             method: 'put',
             body: JSON.stringify({

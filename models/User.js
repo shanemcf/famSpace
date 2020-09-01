@@ -73,6 +73,7 @@ User.init(
         key: 'id'
       }
     },
+    
     family: {
       type: DataTypes.JSON,
       allowNull: true
