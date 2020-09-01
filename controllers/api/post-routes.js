@@ -109,7 +109,7 @@ router.post('/', (req, res) => {
 
 
 // PUT (update) a post title and/or content
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
   Post.update(
     {
       caption: req.body.caption
@@ -135,7 +135,7 @@ router.put('/:id', withAuth, (req, res) => {
 
 
 // DELETE a post
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id
