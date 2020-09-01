@@ -124,6 +124,8 @@ router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
+
+
 // fam up
 router.get('/fam-up', (req, res) => {
   if (!req.session.loggedIn) {
@@ -133,7 +135,6 @@ router.get('/fam-up', (req, res) => {
   else{
     res.render('fam-up');
   }
-
 });
 
 

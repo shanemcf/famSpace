@@ -1,0 +1,22 @@
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: rgb(244, 244, 244);
+  background-image: url("../images/blu_stripes_@2X.png");
+}
+
+header {
+  background-color: rgb(72, 72, 72, .50);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 40px;
+  background-image: url("../images/blu_stripes_@2X.png");
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}

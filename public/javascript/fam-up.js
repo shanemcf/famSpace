@@ -99,10 +99,10 @@ function navigateToFam(){
 }
 
 
-document.querySelector('.is-fam-form').addEventListener('submit', joinFamFormHandler);
+
+
+document.querySelector('#join-fam').addEventListener('click', joinFamFormHandler);
 
 document.querySelector('#generate-key').addEventListener('click', famKeyPPopulator)
 
 document.querySelector('#create-fam').addEventListener('submit', createFamFormHandler);
-
-document.querySelector('#fam-nav').addEventListener('submit', navigateToFam);
