@@ -97,7 +97,7 @@ router.post('/', (req, res) => {
   Post.create({
     caption: req.body.caption,
     imageURL: req.body.imageURL,
-    user_id: req.session.user_id
+    user_id: req.body.user_id
   })
     .then((newPost) => res.json(newPost))
     .catch((err) => {

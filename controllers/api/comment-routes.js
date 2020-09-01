@@ -17,14 +17,13 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   // check the session to verify user is logged in
   if (req.session) {
     Comment.create({
       comment_text: req.body.comment_text,
       post_id: req.body.post_id,
-      // use the id from the session
-      user_id: req.session.user_id
+      user_id: req.body.user_id
     })
       .then((dbCommentData) => res.json(dbCommentData))
       .catch((err) => {

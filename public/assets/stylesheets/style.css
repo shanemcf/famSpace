@@ -25,6 +25,30 @@ header {
   z-index: 9999;
 }
 
-.top-buffer { 
-  margin-top:20px; 
+footer {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
 }
+
+.top-buffer { 
+  margin-top: 20px; 
+}
+
+.nav-item {
+  margin-right: 1em;
+  align-self: flex-end;
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: .5%;
+  opacity: .6;
+}
+
