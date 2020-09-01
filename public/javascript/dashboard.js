@@ -64,6 +64,6 @@ async function addressFormHandler(event) {
     }
 }
 
-// document.getElementById('.update-phone-number').addEventListener('submit', phoneFormHandler);
-// document.getElementById('.update-email').addEventListener('submit', emailFormHandler);
-// document.getElementById('.update-address').addEventListener('submit', addressFormHandler);
+ document.querySelector('#update-phone-number').addEventListener('submit', phoneFormHandler);
+ document.querySelector('#update-email').addEventListener('submit', emailFormHandler);
+ document.querySelector('#update-address').addEventListener('submit', addressFormHandler);

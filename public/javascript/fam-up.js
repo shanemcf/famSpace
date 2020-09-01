@@ -54,7 +54,7 @@ async function joinFamFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard/');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
@@ -74,20 +74,21 @@ function famKeyPPopulator(event){
 
 async function createFamFormHandler(event) {
     event.preventDefault();
-
-    const generatedFamKey = document.querySelector('#generated-key').value;
-
+    console.log('Arrived at createFamFormHandler')
+    const generatedFamKey = document.querySelector('#generated-key').textContent;
+    console.log('This is the generatedFamKey: ', generatedFamKey)
     if (generatedFamKey) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/fams', {
             method: 'post',
             body: JSON.stringify({
                 generatedFamKey
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-
+        console.log('This is the response: ', response)
         if (response.ok) {
-            document.location.replace('/dashboard/');
+            console.log('We should redirect here.')
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
@@ -105,4 +106,9 @@ document.querySelector('#join-fam').addEventListener('click', joinFamFormHandler
 
 document.querySelector('#generate-key').addEventListener('click', famKeyPPopulator)
 
+<<<<<<< HEAD
 document.querySelector('#create-fam').addEventListener('submit', createFamFormHandler);
+=======
+document.querySelector('#create-fam').addEventListener('click', createFamFormHandler);
+
+>>>>>>> a16202c4ff026d220ee9104c4ba9773508b693cc
