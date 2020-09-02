@@ -3,7 +3,7 @@ const router = require('express').Router();
 const fs = require('fs');
 // var multer  = require('multer')
 // var upload = multer({ dest: 'uploads/' })
-// const cors = require('cors');
+const cors = require('cors');
 
 router.post("/", cors(), (req, res) => {
     console.log(req.files)
