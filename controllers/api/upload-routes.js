@@ -5,7 +5,7 @@ const fs = require('fs');
 // var upload = multer({ dest: 'uploads/' })
 // const cors = require('cors');
 
-router.post("/", (req, res) => {
+router.post("/", cors(), (req, res) => {
     console.log(req.files)
     try{
     if (!req.files) {
