@@ -1,8 +1,6 @@
 const router = require('express').Router();
-// const withAuth = require('../../utils/auth');
 const fs = require('fs');
-// var multer  = require('multer')
-// var upload = multer({ dest: 'uploads/' })
+// 5429e53411446494f4e1d0135d038c5b62c0a8c0
 const cors = require('cors');
 
 router.post("/", cors(), (req, res) => {
@@ -14,12 +12,14 @@ router.post("/", cors(), (req, res) => {
           message: 'No file uploaded',
         });
       } else {
-        //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
+        //Use the name of the input field (i.e. "displayImage") to retrieve the uploaded file
         let displayImage = req.files.displayImage;
   
         //Use the mv() method to place the file in upload directory (i.e. "uploads")
         displayImage.mv('./uploads/' + displayImage.name);
-  
+        
+        // router.put("/user/" + req.session.user_id)
+
         //send response
         res.send({
           status: 200,
