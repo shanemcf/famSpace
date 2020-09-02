@@ -99,21 +99,21 @@ router.get('/edit/:id', (req, res) => {
 */
 
 //GET user logged in for dashboard data population
-router.get('/user/:id', (req, res) => {
+router.get('/', (req, res) => {
   User.findOne({
     where: {
-      id: req.params.id
+      id: req.session.user_id
     },
     attributes: [
       'id',
-      'first',
-      'last',
+      'first_name',
+      'last_name',
       'birthdate',
       'email',
       'username',
       'fam_id'
     ],
-    include: [
+    /*include: [
       {
         model: Contact,
         attributes: [
@@ -122,11 +122,12 @@ router.get('/user/:id', (req, res) => {
           'address', 
           'user_id']
       }
-    ]
+    ]*/
   })
     .then(dbUserData => {
       // serialize data before passing to template
       const user = dbUserData.get({ plain: true });
+      console.log("user: ", user);
       res.render('dashboard', {
         user,
         loggedIn: true

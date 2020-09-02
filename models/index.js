@@ -40,22 +40,17 @@ Post.hasMany(Comment, {
   foreignKey: 'post_id'
 });
 
-
-
 User.belongsTo(Fam, {
   foreignKey: 'fam_id'
 });
-
-
 
 Fam.hasMany(User, {
   foreignKey: 'fam_id'
 });
 
 Contact.belongsTo(User, {
-  foreignKey: 'id'
+  foreignKey: 'user_id'
 });
-
 
 
 module.exports = { Fam, User, Post, Comment, Contact };

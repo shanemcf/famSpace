@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const fs = require('fs');
+// 5429e53411446494f4e1d0135d038c5b62c0a8c0
 const cors = require('cors');
 
-router.post("/",cors(), (req, res) => {
+router.post("/", cors(), (req, res) => {
     console.log(req.files)
     try{
     if (!req.files) {

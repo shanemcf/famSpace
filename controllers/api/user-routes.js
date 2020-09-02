@@ -7,7 +7,7 @@ const userAuth = require('../../utils/auth'); // Authenticate user session middl
 router.get('/', (req, res) => {
 	// Access our User model and run .findAll() method)
 	User.findAll({
-		attributes: { exclude: ['password'] } // Preserve users' privacy.
+		attributes: { exclude: ['user_password'] } // Preserve users' privacy.
 	})
 		.then((dbUserData) => res.json(dbUserData))
 		.catch((err) => {
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 // GET /api/users/1 (retrieve one user by id)
 router.get('/:id', (req, res) => {
 	User.findOne({
-		attributes: { exclude: ['password'] },
+		attributes: { exclude: ['user_password'] },
 		where: {
 			id: req.params.id
 		},
@@ -66,17 +66,17 @@ router.get('/:id', (req, res) => {
 // POST /api/Users -- create a new user on signup
 router.post('/', (req, res) => {
 	User.create({
-		first: req.body.first,
-		last: req.body.last,
+		first_name: req.body.first_name,
+		last_name: req.body.last_name,
 		birthdate: req.body.birthdate,
 		email: req.body.email,
 		username: req.body.username,
-		password: req.body.password
+		user_password: req.body.user_password
 	})
 		//
 		.then((dbUserData) => {
 			req.session.save(() => {
-				req.session.User_id = dbUserData.id;
+				req.session.user_id = dbUserData.id;
 				req.session.username = dbUserData.username;
 				req.session.loggedIn = true;
 
@@ -150,7 +150,7 @@ router.post('/login', (req, res) => {
 		}
 
 		// validate password
-		const validPassword = dbUserData.checkPassword(req.body.password);
+		const validPassword = dbUserData.checkPassword(req.body.user_password);
 
 		if (!validPassword) {
 			res.status(400).json({ message: 'Incorrect password!' });
