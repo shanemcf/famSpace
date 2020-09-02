@@ -39,10 +39,14 @@ footer {
 }
 
 .top-buffer { 
-  margin-top: 20px; 
+  margin-top: 1.5em; 
 }
 
-.sm-bottom-margin {
+.sm-top-buffer { 
+  margin-top: .5em; 
+}
+
+.sm-bottom-buffer {
   margin-bottom: 10px;
 }
 
@@ -60,6 +64,14 @@ footer {
   font-size: 90%;
   margin-bottom: .5%;
   opacity: .6;
+}
+
+.comments {
+  overflow: auto;
+  max-height: 175px;
+  max-width: 95%;
+  padding-right: 0px;
+  opacity: 90%;
 }
 
 .card {
