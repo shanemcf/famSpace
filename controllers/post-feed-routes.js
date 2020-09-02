@@ -139,8 +139,8 @@ router.get('/dashboard', (req, res) => {
       },
       attributes: [
         'id',
-        'first',
-        'last',
+        'first_name',
+        'last_name',
         'birthdate',
         'email',
         'username',

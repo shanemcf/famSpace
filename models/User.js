@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 class User extends Model {
   // set up method to run on instance data (per user) to check password
   checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
+    return bcrypt.compareSync(loginPw, this.user_password);
   }
 }
 
@@ -26,12 +26,12 @@ User.init(
       autoIncrement: true
     },
     //define a first name column
-    first: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
     //define a last name column
-    last:{
+    last_name:{
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -57,7 +57,7 @@ User.init(
       allowNull: false
     },
     // define a password column
-    password: {
+    user_password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -87,12 +87,12 @@ User.init(
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
       async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        newUserData.user_password = await bcrypt.hash(newUserData.user_password, 10);
         return newUserData;
       },
       // set up beforeUpdate lifecycle "hook" functionality
       async beforeUpdate(updatedUserData) {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.user_password = await bcrypt.hash(updatedUserData.user_password, 10);
         return updatedUserData;
       }
     },
