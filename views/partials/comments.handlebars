@@ -1,14 +1,23 @@
 <section class="comments sm-top-buffer col-sm-6 b-2">
-  <div class="card bg-light mb-4" style="border-radius:0%">
+  <div class="card bg-light" style="border-radius:0%">
     {{#each this}}
-    <section class="comment">
+    <section class="comment mb-2">
       <div class="meta card-header" style="padding:.25em">
         {{user.username}} on {{format_date created_at}}
       </div>
       <div class="text">
         {{comment_text}}
       </div>
+      <custom class="d-none" postId="{{post_id}}"></custom>
     </section>
     {{/each}}
   </div>
+  <form class="comment-form">
+    <div>
+      <textarea name="comment-body" class="mb-2 mt-2 form-control"></textarea>
+    </div>
+    <div>
+      <button class="btn-primary" type="submit">add comment</button>
+    </div>
+  </form>
 </section>
