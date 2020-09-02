@@ -1,7 +1,29 @@
 <ol class="post-list list-unstyled">
   {{#each posts as |post|}}
   <li>
-    {{> post-info post }}
+    <article class="post top-buffer row">
+      <div class="col-sm-6">
+        <div class="card">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text"><small class="text-muted">
+                <i>posted by
+                  <span style="font-weight:bolder">
+                    {{user.username}}
+                  </span>
+                  <br>
+                  on
+                  <br>
+                  {{format_date created_at}}
+                </i>
+                <br>
+            </p></small></p>
+            <p class="card-text">{{caption}}</p>
+          </div>
+        </div>
+      </div>
+      {{> comments post.comments}}
+    </article>
   </li>
   {{/each}}
-</ol>  
+</ol>
