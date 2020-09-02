@@ -106,6 +106,7 @@ router.get('/Post/:id', (req, res) => {
 // login
 router.get('/login', (req, res) => {
   // check session variable...if user is logged in redirect to homepage
+  
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
@@ -114,7 +115,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// sign up
+//sign up
 router.get('/sign-up', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -124,18 +125,6 @@ router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
-// homepage
-router.get('/homepage', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-    return;
-  }
-  else{
-    res.render('/');
-  }
-  
-});
-
 // dashboard
 router.get('/dashboard', (req, res) => {
   if (!req.session.loggedIn) {
@@ -143,7 +132,44 @@ router.get('/dashboard', (req, res) => {
     return;
   }
   else{
-    res.render('dashboard');
+    console.log(req.session);
+    User.findOne({
+      where: {
+        id: req.session.user_id
+      },
+      attributes: [
+        'id',
+        'first',
+        'last',
+        'birthdate',
+        'email',
+        'username',
+        'fam_id'
+      ],
+      /*include: [
+        {
+          model: Contact,
+          attributes: [
+            'id', 
+            'telephone', 
+            'address', 
+            'user_id']
+        }
+      ]*/
+    })
+      .then(dbUserData => {
+        // serialize data before passing to template
+        const user = dbUserData.get({ plain: true });
+        console.log("user: ", user);
+        res.render('dashboard', {
+          user,
+          loggedIn: true
+        })
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   }
   
 });

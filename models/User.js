@@ -73,7 +73,7 @@ User.init(
         key: 'id'
       }
     },
-
+/*
     picture_id: {
       type:DataTypes.INTEGER,
       references:{
@@ -81,6 +81,7 @@ User.init(
         key: 'id'
       }
     }
+    */
   },
   {
     hooks: {
