@@ -174,7 +174,7 @@ router.get('/dashboard', (req, res) => {
   
 });
 
-// fam up
+// add post
 router.get('/add-post', (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');
@@ -196,7 +196,7 @@ router.get('/fam-up', (req, res) => {
   }
 });
 
-// fam up
+// events
 router.get('/events', (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');

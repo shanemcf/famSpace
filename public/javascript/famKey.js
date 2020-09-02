@@ -34,6 +34,3 @@ function famKey(surname) {
   return uId;
 
 }
-
-module.exports = {famKey};
-

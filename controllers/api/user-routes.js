@@ -85,9 +85,7 @@ router.post('/', (req, res) => {
 		});
 });
 
-
-
-// PUT /api/Users/1
+// PUT /api/users/1
 router.put('/:id', (req, res) => {
 	User.update(req.body, {
 		individualHooks: true,
