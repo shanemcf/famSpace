@@ -73,10 +73,13 @@ User.init(
         key: 'id'
       }
     },
-    
-    family: {
-      type: DataTypes.JSON,
-      allowNull: true
+
+    picture_id: {
+      type:DataTypes.INTEGER,
+      references:{
+        model:'profile-picture',
+        key: 'id'
+      }
     }
   },
   {
