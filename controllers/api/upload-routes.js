@@ -1,11 +1,11 @@
 const router = require('express').Router();
 // const withAuth = require('../../utils/auth');
 const fs = require('fs');
-var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
-const cors = require('cors');
+// var multer  = require('multer')
+// var upload = multer({ dest: 'uploads/' })
+// const cors = require('cors');
 
-router.post("/",cors(), (req, res) => {
+router.post("/", (req, res) => {
     console.log(req.files)
     try{
     if (!req.files) {
