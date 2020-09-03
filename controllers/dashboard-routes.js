@@ -106,14 +106,14 @@ router.get('/', (req, res) => {
     },
     attributes: [
       'id',
-      'first',
-      'last',
+      'first_name',
+      'last_name',
       'birthdate',
       'email',
       'username',
       'fam_id'
     ],
-    /*include: [
+    include: [
       {
         model: Contact,
         attributes: [
@@ -122,7 +122,7 @@ router.get('/', (req, res) => {
           'address', 
           'user_id']
       }
-    ]*/
+    ]
   })
     .then(dbUserData => {
       // serialize data before passing to template

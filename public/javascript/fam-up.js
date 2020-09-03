@@ -78,19 +78,34 @@ async function createFamFormHandler(event) {
     const generatedFamKey = document.querySelector('#generated-key').textContent;
     console.log('This is the generatedFamKey: ', generatedFamKey)
     if (generatedFamKey) {
-        const response = await fetch('/api/fams', {
+        const famResponse = await fetch('/api/fams', {
             method: 'post',
             body: JSON.stringify({
                 generatedFamKey
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-        console.log('This is the response: ', response)
-        if (response.ok) {
+
+        const fan_id = await fetch('/api/fams/');
+
+        console.log('fan_id: ', fan_id)
+
+
+        /*const userResponse = await fetch(`api/users/${session.user_id}`, {
+            method: 'put',
+            body:JSON.stringify({
+
+                
+            })
+        })*/
+
+
+        console.log('This is the response: ', famResponse)
+        if (famResponse.ok) {
             console.log('We should redirect here.')
             document.location.replace('/');
         } else {
-            alert(response.statusText);
+            alert(fam-response.statusText);
         }
     }
 }

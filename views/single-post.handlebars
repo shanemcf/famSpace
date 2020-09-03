@@ -1,20 +1,44 @@
-<article class="post">
-  {{> post-info post}}
+<article class="post top-buffer row">
+  <div class="col-sm-6">
+    <div class="card">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text"><small class="text-muted">
+            <i>posted by
+              <span style="font-weight:bolder">
+                {{post.user.username}}
+              </span>
+              on
+              {{format_date post.created_at}}
+            </i>
+            <br>
+        </p></small></p>
+        <p class="card-text">{{caption}}</p>
+      </div>
+    </div>
+  </div>
+  <form class="comment-form">
+    <div>
+      <textarea name="comment-body" class="mb-2 mt-2 form-control">
+        </textarea>
+    </div>
+    <div>
+      <button class="btn-primary" type="submit">add comment</button>
+    </div>
+  </form>
+
+  <div class="comments">
+    {{#each post.comments}}
+    <section class="comment">
+      <div class="meta">
+        {{user.username}} on {{created_at}}
+      </div>
+      <div class="text">
+        {{comment_text}}
+      </div>
+    </section>
+    {{/each}}
+  </div>
 </article>
-
-
-<form>
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button class="button" type="submit">add comment</button>
-  </div>
-</form>
-
-
-{{> comments post.comments}}
-
 
 <script src="/javascript/comment.js"></script>

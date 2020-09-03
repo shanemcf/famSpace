@@ -47,9 +47,26 @@ router.get('/', (req, res) => {
     });
 });
 
+// router.get('/post/:id', (req, res) => {
+//   const post = {
+//     id: 1,
+//     post_url: 'https://handlebarsjs.com/guide/',
+//     title: 'Handlebars Docs',
+//     created_at: new Date(),
+//     vote_count: 10,
+//     comments: [{}, {}],
+//     user: {
+//       username: 'test_user'
+//     }
+//   };
 
-// single-Post
-router.get('/Post/:id', (req, res) => {
+//   res.render('single-post', { post });
+// });
+
+
+
+// single-post
+router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
@@ -92,7 +109,7 @@ router.get('/Post/:id', (req, res) => {
       const post = dbPostData.get({ plain: true });
 
       // pass data to template
-      res.render('post', {
+      res.render('single-post', {
         post,
         loggedIn: req.session.loggedIn
       });
@@ -139,8 +156,8 @@ router.get('/dashboard', (req, res) => {
       },
       attributes: [
         'id',
-        'first',
-        'last',
+        'first_name',
+        'last_name',
         'birthdate',
         'email',
         'username',
@@ -174,7 +191,7 @@ router.get('/dashboard', (req, res) => {
   
 });
 
-// fam up
+// add post
 router.get('/add-post', (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');
@@ -196,7 +213,7 @@ router.get('/fam-up', (req, res) => {
   }
 });
 
-// fam up
+// events
 router.get('/events', (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');
