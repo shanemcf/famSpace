@@ -18,18 +18,12 @@
             </p></small></p>
             <p class="card-text">{{caption}}</p>
           </div>
+          <div class="mx-auto meta">
+            <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+          </div>
         </div>
-        <form class="comment-form">
-          <div>
-            <textarea name="comment-body" class="mb-2 mt-2 form-control"></textarea>
-          </div>
-          <div>
-            <button data-id={{id}} class="btn-primary cmt-btn" type="submit">add comment</button>
-          </div>
-        </form>
       </div>
       {{!-- <div class="d-none" id="post-id">{{post.id}}</div> --}}
-      {{> comments post.comments}}
     </article>
   </li>
   {{/each}}
