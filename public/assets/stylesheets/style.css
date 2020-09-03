@@ -81,3 +81,7 @@ footer {
 .container {
   margin-left: auto;
 }
+
+.pull-right {
+  float: right;
+}
