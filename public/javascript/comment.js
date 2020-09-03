@@ -1,15 +1,13 @@
-// This still needs work -- grabbed it from a previous project.
-
 async function commentFormHandler(event) {
   event.preventDefault();
 
-  const comment_text = document
-    .querySelector('textarea[name="comment-body"]')
-    .value.trim();
+  const comment_text = 
+  document.querySelector('textarea[name="comment-body"]')
+  .value
+  .trim();
 
-  const post_id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
+  let post_id = $(this).attr("data-id");
+  console.log('this is post_id: ', post_id)
 
   if (comment_text) {
     const response = await fetch('/api/comments', {
@@ -22,13 +20,14 @@ async function commentFormHandler(event) {
         'Content-Type': 'application/json'
       }
     });
-
+  
     if (response.ok) {
       document.location.reload();
     } else {
       alert(response.statusText);
     }
   }
+  
 }
 
-document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+document.querySelector('.cmt-btn').addEventListener('click', commentFormHandler);

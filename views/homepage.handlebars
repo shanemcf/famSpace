@@ -19,9 +19,21 @@
             <p class="card-text">{{caption}}</p>
           </div>
         </div>
+        <form class="comment-form">
+          <div>
+            <textarea name="comment-body" class="mb-2 mt-2 form-control"></textarea>
+          </div>
+          <div>
+            <button data-id={{id}} class="btn-primary cmt-btn" type="submit">add comment</button>
+          </div>
+        </form>
       </div>
+      {{!-- <div class="d-none" id="post-id">{{post.id}}</div> --}}
       {{> comments post.comments}}
     </article>
   </li>
   {{/each}}
 </ol>
+
+
+<script src="/javascript/comment.js"></script>

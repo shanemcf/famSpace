@@ -1,7 +1,7 @@
 <section class="comments sm-top-buffer col-sm-6 b-2">
-  <div class="card bg-light mb-4" style="border-radius:0%">
+  <div class="card bg-light" style="border-radius:0%">
     {{#each this}}
-    <section class="comment">
+    <section id="{{post_id}}" class="comment mb-2">
       <div class="meta card-header" style="padding:.25em">
         {{user.username}} on {{format_date created_at}}
       </div>
@@ -11,4 +11,5 @@
     </section>
     {{/each}}
   </div>
+
 </section>
