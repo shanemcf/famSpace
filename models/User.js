@@ -65,7 +65,6 @@ User.init(
         len: [4]
       }
     },
-    
     fam_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -73,6 +72,13 @@ User.init(
         key: 'id'
       }
     },
+    contact_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'contact',
+        key: 'id'
+      }
+    }
 /*
     picture_id: {
       type:DataTypes.INTEGER,

@@ -48,8 +48,8 @@ Fam.hasMany(User, {
   foreignKey: 'fam_id'
 });
 
-Contact.belongsTo(User, {
-  foreignKey: 'user_id'
+Contact.hasOne(User, {
+  foreignKey: 'contact_id'
 });
 
 

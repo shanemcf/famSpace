@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../models');
+const { User, Post, Comment, Contact } = require('../models');
 
 
 
@@ -146,7 +146,7 @@ router.get('/dashboard', (req, res) => {
         'username',
         'fam_id'
       ],
-      /*include: [
+      include: [
         {
           model: Contact,
           attributes: [
@@ -155,7 +155,7 @@ router.get('/dashboard', (req, res) => {
             'address', 
             'user_id']
         }
-      ]*/
+      ]
     })
       .then(dbUserData => {
         // serialize data before passing to template

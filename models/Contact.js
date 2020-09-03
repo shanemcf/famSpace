@@ -30,14 +30,14 @@ Contact.init(
       type: DataTypes.STRING,
       allowNull: true
     },
-    //define a user id column
-    user_id:{
-        type: DataTypes.INTEGER,
-        references:{
-            model: 'user',
-            key: 'id'
-        }
-    }
+    // //define a user id column
+    // user_id:{
+    //     type: DataTypes.INTEGER,
+    //     references:{
+    //         model: 'user',
+    //         key: 'id'
+    //     }
+    // }
   },
   {
     // pass in our imported sequelize connection (the direct connection to our database)

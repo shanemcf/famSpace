@@ -89,6 +89,6 @@ app.use(routes);
 // If you force, existing tables will be overwritten.
 // This allows the table to be overwritten and re-created.
 // TURN BACK TO FALSE FOR PRODUCTION
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
