@@ -71,14 +71,14 @@ User.init(
         model: 'fam',
         key: 'id'
       }
-    },
+    },/*
     contact_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'contact',
         key: 'id'
       }
-    }
+    }*/
 /*
     picture_id: {
       type:DataTypes.INTEGER,

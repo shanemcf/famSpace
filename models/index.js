@@ -49,8 +49,8 @@ Fam.hasMany(User, {
 });
 
 
-Contact.hasOne(User, {
-  foreignKey: 'contact_id',
+User.hasOne(Contact, {
+  foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
 

@@ -2,8 +2,12 @@ const router = require('express').Router();
 const { User, Contact } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
   Contact.findOne({
+    where:{
+      id:req.body.id
+    },
+    
     attributes: [
       'id',
       'telephone',
