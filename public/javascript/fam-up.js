@@ -1,3 +1,5 @@
+//const sequelize = require("../../config/connection");
+
 let displayKeyEl = document.querySelector('#generated-key');
 
 //let { famKey } = require ('./famKey');
@@ -86,9 +88,11 @@ async function createFamFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
 
-        const fan_id = await fetch('/api/fams/');
+        const fam_id = await fetch(`/api/fams/${generatedFamKey}`, {
 
-        console.log('fan_id: ', fan_id)
+        });
+
+        console.log('fam_id: ', fam_id)
 
 
         /*const userResponse = await fetch(`api/users/${session.user_id}`, {

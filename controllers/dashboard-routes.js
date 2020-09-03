@@ -126,7 +126,7 @@ router.get('/', (req, res) => {
   })
     .then(dbUserData => {
       // serialize data before passing to template
-      const user = dbUserData.get({ plain: true });
+      const user = dbUserData.get({ plain: false });
       console.log("user: ", user);
       res.render('dashboard', {
         user,
