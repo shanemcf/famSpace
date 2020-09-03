@@ -85,3 +85,23 @@ footer {
 .pull-right {
   float: right;
 }
+
+.month {
+  max-width: 35%;
+}
+
+.day {
+  max-width: 15%;
+}
+
+.year {
+  max-width: 25%;
+}
+
+.formfield {
+  max-width: 75%
+}
+
+.birthday-entry {
+  justify-content: space-around;
+}
