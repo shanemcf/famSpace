@@ -1,10 +1,12 @@
 async function commentFormHandler(event) {
   event.preventDefault();
 
-  const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
+  const comment_text = 
+  document.querySelector('textarea[name="comment-body"]')
+  .value
+  .trim();
 
-  // const post_id = document.getElementById("post-id").innerHTML;
-  const post_id = $(this).attr("data-id");
+  let post_id = $(this).attr("data-id");
   console.log('this is post_id: ', post_id)
 
   if (comment_text) {
