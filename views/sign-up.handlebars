@@ -1,60 +1,58 @@
-<section class="card">
-    <form class="signup-form">
+<article class="row justify-content-center top-buffer">
+    <div class="card card-body col-xs-12 col-sm-9 col-md-6 text-center">
+        <form class="signup-form formfield mx-auto justify-content-center">
+            <h4>Create an Account</h4>
+            <section class="top-buffer">
+                <div>
+                    <input class="form-control card-input" type="text" placeholder="first name" id="first-name-signup" />
+                </div>
+                <div class="sm-top-buffer">
+                    <input class="form-control card-input" type="text" placeholder="last name" id="last-name-signup" />
+                </div>
+            </section>
+           
+           {{!-- Birthday entry fields --}}
+            <section class="top-buffer container birthday-entry">
+                <div class="row justify-content-around">
+                <h5 class="text-muted mt-auto">Birthdate </h5>
+                <select class="form-control month" id="birth-month-signup">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <input class="form-control card-input day" type="text" placeholder="DD" id="birth-day-signup" maxlength="2" />
+                <input class="form-control card-input year" type="text" placeholder="YYYY" id="birth-year-signup" maxlength="4" />
+            </div>
+            </section>
+            
+            {{!-- Username, Email, Password Section --}}
+            <section class="sm-top-buffer">
+                <div class="sm-top-buffer">
+                    <input class="card-input form-control" type="text" placeholder="username" id="username-signup" />
+                </div>
+                <div class="sm-top-buffer">
+                    <input class="card-input form-control" type="email" placeholder="email" id="email-signup" />
+                </div>
+                <div class="sm-top-buffer">
+                    <input class="card-input form-control" type="password" placeholder="password" id="password-signup" />
+                </div>
+            </section>
 
-        <h4 class="card-header">Create an Account</h4>
-
-        <div>
-            <input class="card-input" type="text" placeholder="first name" id="first-name-signup" />
-        </div>
-
-        <div>
-            <input class="card-input" type="text" placeholder="last name"id="last-name-signup" />
-        </div>
-
-        <h4 class="card-header">Birthdate</h4>
-
-        <div>
-            <select id="birth-month-signup" > 
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-            </select>
-        </div>
-
-        <div>
-            <input class="card-input" type="text" placeholder="DD" id="birth-day-signup" maxlength="2" />
-        </div>
-
-        <div>
-            <input class="card-input" type="text" placeholder="YYYY" id="birth-year-signup" maxlength="4" />
-        </div>
-
-        <div>
-            <input class="card-input" type="email" placeholder="email"id="email-signup" />
-        </div>
-
-        <div>
-            <input class="card-input" type="text" placeholder="username"id="username-signup" />
-        </div>     
-
-        <div>
-            <input class="card-input" type="password" placeholder="password"id="password-signup" />
-        </div>
-
-        <div>
-            <button class="card-button" type="submit">sign Up</button>
-        </div>
-
-    </form>
-</section>
+            {{!-- Submit Button --}}
+            <div>
+                <button class="btn btn-primary top-buffer" type="submit">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</article>
 
 <script src="/javascript/sign-up.js"></script>
