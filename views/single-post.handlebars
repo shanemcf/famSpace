@@ -1,7 +1,7 @@
 <article class="post top-buffer row">
   <div class="col-sm-6">
     <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
+      <img class="card-img-top" src="/assets/images/{{post.id}}.jpg" alt="Card image cap">
       <div class="card-body">
         <p class="card-text"><small class="text-muted">
             <i>posted by
@@ -16,29 +16,35 @@
         <p class="card-text">{{caption}}</p>
       </div>
     </div>
-  </div>
-  <form class="comment-form">
-    <div>
-      <textarea name="comment-body" class="mb-2 mt-2 form-control">
+    {{#if loggedIn}}
+    <div class="card" style="opacity:75%">
+      <form class="card-body comment-form">
+        <div>
+          <textarea name="comment-body" class="mb-2 mt-2 form-control">
         </textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Add a Comment</button>
+      </form>
     </div>
-    <div>
-      <button class="btn-primary" type="submit">add comment</button>
-    </div>
-  </form>
-
-  <div class="comments">
-    {{#each post.comments}}
-    <section class="comment">
-      <div class="meta">
-        {{user.username}} on {{created_at}}
-      </div>
-      <div class="text">
-        {{comment_text}}
-      </div>
-    </section>
-    {{/each}}
+    {{/if}}
   </div>
+
+  <section class="comments sm-top-buffer col-sm-6 b-2">
+    <div class="card bg-light" style="border-radius:0%">
+      <div>
+        {{#each post.comments}}
+        <section class="comment">
+          <div class="meta card-header" style="padding:.25em">
+            {{user.username}} on {{format_date created_at}}
+          </div>
+          <div class="text">
+            {{comment_text}}
+          </div>
+        </section>
+        {{/each}}
+      </div>
+    </div>
+  </section>
 </article>
 
 <script src="/javascript/comment.js"></script>

@@ -51,7 +51,7 @@ footer {
 }
 
 .navbar-brand {
-  font-size: 2em;
+  font-size: 3em;
   font-family: 'Leckerli One';
 }
 
@@ -68,7 +68,7 @@ footer {
 
 .comments {
   overflow: auto;
-  max-height: 175px;
+  max-height: 300px;
   max-width: 95%;
   padding-right: 0px;
   opacity: 90%;

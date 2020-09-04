@@ -24,24 +24,34 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav pull-right">
+                {{#if loggedIn}}
                 <li class="nav-item active">
                     <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
+                {{/if}}
                 <li class="nav-item">
-                    <a class="nav-link btn-sm" href="/login">Login</a>
+                    <a class="nav-link btn-sm active" href="/login">Login</a>
                 </li>
+                {{#if loggedIn}}
                 <li class="nav-item">
-                    <button class="nav-link btn-sm" id="logout">Logout</button>
+                    <button class="nav-link" id="logout" style="border:none;background-color:transparent">Logout</button>
                 </li>
+                {{/if}}
+                {{#if loggedIn}}
                 <li class="nav-item">
-                    <button class="nav-link btn-sm" id="add-post-nav">Create a Post</button>
+                    <button class="nav-link btn-sm" id="add-post-nav" style="border:none;background-color:transparent">Create a Post</button>
                 </li>
+                {{/if}}
+                {{#if loggedIn}}
                 <li class="nav-item">
-                    <button class="nav-link btn-sm" id="fam-nav">Join or Create a Fam</button>
+                    <button class="nav-link btn-sm" id="fam-nav" style="border:none;background-color:transparent">Join or Create a Fam</button>
                 </li>
+                {{/if}}
+                {{#if loggedIn}}
                 <li class="nav-item">
-                    <button class="nav-link btn-sm" id="events-nav">View Upcoming Events</button>
+                    <button class="nav-link btn-sm" id="events-nav" style="border:none;background-color:transparent">View Upcoming Events</button>
                 </li>
+                {{/if}}
             </ul>
         </div>
     </nav>
@@ -49,7 +59,8 @@
     <main class="container">
         {{{ body }}}
     </main>
-    <footer>
+
+    <footer class="mt-5">
         famSpace &#169;2020
     </footer>
 
