@@ -58,11 +58,25 @@ router.get('/:fam', (req, res) => {
 router.post('/', (req, res) => {
   console.log('POST/fams - create a fam route.')
   Fam.create({
-    famKey: req.body.generatedFamKey
+    famKey: req.body.generatedFamKey,
   })
     .then((newFam) =>{
-      console.log('newFam:', newFam)
-      newFam})
+      console.log('newFam:', newFam.get({ plain: true }))
+      
+      return newFam.get({ plain: true })
+    })
+    .then((famObj) => {
+      return User.update({
+        fam_id: famObj.id
+      }, 
+      {
+        where: {
+          id: req.session.user_id
+        },
+      })
+    }).then(() => res.status(200))
+
+  
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
