@@ -88,10 +88,6 @@ async function createFamFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
 
-        const fam_id = await fetch(`/api/fams/${generatedFamKey}`, {
-
-        });
-
         console.log('fam_id: ', fam_id)
 
 

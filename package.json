@@ -4,7 +4,6 @@
   "description": "A social media platform that caters to families.",
   "main": "server.js",
   "dependencies": {
-    "and": "^0.0.3",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.1",
     "cors": "^2.8.5",
@@ -13,7 +12,6 @@
     "express-fileupload": "^1.2.0",
     "express-handlebars": "^5.1.0",
     "express-session": "^1.17.1",
-    "express-session-sequelize": "^2.3.0",
     "multer": "^1.4.2",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.4",

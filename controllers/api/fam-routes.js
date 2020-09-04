@@ -60,7 +60,9 @@ router.post('/', (req, res) => {
   Fam.create({
     famKey: req.body.generatedFamKey
   })
-    .then((newFam) => res.json(newFam))
+    .then((newFam) =>{
+      console.log('newFam:', newFam)
+      newFam})
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

@@ -71,23 +71,12 @@ User.init(
         model: 'fam',
         key: 'id'
       }
-    },/*
-    contact_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'contact',
-        key: 'id'
-      }
+    },
+    /*picture_id: {
+      type:DataTypes.STRING,
+      allowNull: true
     }*/
-/*
-    picture_id: {
-      type:DataTypes.INTEGER,
-      references:{
-        model:'profile-picture',
-        key: 'id'
-      }
-    }
-    */
+    
   },
   {
     hooks: {

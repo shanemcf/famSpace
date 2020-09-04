@@ -2,7 +2,7 @@ async function phoneFormHandler(event) {
     event.preventDefault();
 
     const telephone = document.querySelector('#phone-dashboard').value.trim();
-    const id = 1;
+    const id = session.user_id;
 
     if (telephone) {
         const response = await fetch(`/api/contact/${id}`, {
@@ -51,7 +51,7 @@ async function addressFormHandler(event) {
     const addressCity = document.querySelector('#address-dashboard-street').value.trim();
     const addressState = document.querySelector('#address-dashboard-street').value.trim();
     const addressZip = document.querySelector('#address-dashboard-street').value.trim();
-    const id = 1;
+    const id = session.user_id;
     let address = "";
 
     if(addressStreetSub){
