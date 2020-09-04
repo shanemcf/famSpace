@@ -16,6 +16,7 @@
         <p class="card-text">{{caption}}</p>
       </div>
     </div>
+    {{#if loggedIn}}
     <div class="card" style="opacity:75%">
       <form class="card-body comment-form">
         <div>
@@ -25,6 +26,7 @@
         <button class="btn btn-primary" type="submit">Add a Comment</button>
       </form>
     </div>
+    {{/if}}
   </div>
 
   <section class="comments sm-top-buffer col-sm-6 b-2">
