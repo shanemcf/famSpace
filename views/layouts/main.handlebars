@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>famSpace</title>
+
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="/assets/stylesheets/style.css"
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/stylesheets/style.css">
-    {{!-- <link rel="stylesheet" href="/assets/stylesheets/icofont.min.css"> --}}
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"> {{!-- General page font --}}
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet"> {{!-- Brand font? --}}
-    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet"> {{!-- Brand font? --}}
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+
+    {{!-- General page font --}}
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    
+    {{!-- Brand font --}}
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -34,22 +42,26 @@
                 </li>
                 {{#if loggedIn}}
                 <li class="nav-item">
-                    <button class="nav-link" id="logout" style="border:none;background-color:transparent">Logout</button>
+                    <button class="nav-link" id="logout"
+                        style="border:none;background-color:transparent">Logout</button>
                 </li>
                 {{/if}}
                 {{#if loggedIn}}
                 <li class="nav-item">
-                    <button class="nav-link btn-sm" id="add-post-nav" style="border:none;background-color:transparent">Create a Post</button>
+                    <button class="nav-link btn-sm" id="add-post-nav"
+                        style="border:none;background-color:transparent">Create a Post</button>
                 </li>
                 {{/if}}
                 {{#if loggedIn}}
                 <li class="nav-item">
-                    <button class="nav-link btn-sm" id="fam-nav" style="border:none;background-color:transparent">Join or Create a Fam</button>
+                    <button class="nav-link btn-sm" id="fam-nav" style="border:none;background-color:transparent">Join
+                        or Create a Fam</button>
                 </li>
                 {{/if}}
                 {{#if loggedIn}}
                 <li class="nav-item">
-                    <button class="nav-link btn-sm" id="events-nav" style="border:none;background-color:transparent">View Upcoming Events</button>
+                    <button class="nav-link btn-sm" id="events-nav"
+                        style="border:none;background-color:transparent">View Upcoming Events</button>
                 </li>
                 {{/if}}
             </ul>
