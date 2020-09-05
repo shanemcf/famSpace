@@ -34,7 +34,6 @@ router.post("/", cors(), (req, res) => {
       }
     }
     catch(err){
-      console.log('HERE')
         res.status(500).json({error: err});
     }
 })
