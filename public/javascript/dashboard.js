@@ -77,5 +77,5 @@ async function addressFormHandler(event) {
 }
 
  document.querySelector('#update-phone-number').addEventListener('click', phoneFormHandler);
- document.querySelector('#update-email').addEventListener('click', emailFormHandler);
+ //document.querySelector('#update-email').addEventListener('click', emailFormHandler);
  document.querySelector('#update-address').addEventListener('click', addressFormHandler);

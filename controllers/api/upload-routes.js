@@ -7,17 +7,21 @@ router.post("/", cors(), (req, res) => {
     console.log(req.files)
     try{
     if (!req.files) {
+
         res.status(500).json({
           status: 500,
           message: 'No file uploaded',
         });
       } else {
+        console.log("req.files.displayImage:", req.files.displayImage)
         //Use the name of the input field (i.e. "displayImage") to retrieve the uploaded file
         let displayImage = req.files.displayImage;
+        
+        //let photoAddress = './uploads/' + displayImage.name
   
         //Use the mv() method to place the file in upload directory (i.e. "uploads")
         displayImage.mv('./uploads/' + displayImage.name);
-        
+        console.log("entered else")        
         // router.put("/user/" + req.session.user_id)
 
         //send response
@@ -33,6 +37,7 @@ router.post("/", cors(), (req, res) => {
       }
     }
     catch(err){
+      console.log('HERE')
         res.status(500).json({error: err});
     }
 })

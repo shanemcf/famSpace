@@ -39,6 +39,13 @@ router.get('/:famKey', (req, res) => {
           id: req.session.user_id
         },
       })
+    }).then((dbUserData) => {
+      req.session.save(() => {
+        console.log("req.session.fam_id pre:", req.session.fam_id)
+        req.session.fam_id = dbUserData.fam_id;
+        console.log("req.session.fam_id post:", req.session.fam_id)
+        res.json(dbUserData);
+      })
     }).then(() => res.status(200))
     .catch((err) => {
       console.log(err);
@@ -65,6 +72,11 @@ router.post('/', (req, res) => {
         where: {
           id: req.session.user_id
         },
+      })
+    }).then((dbUserData) => {
+      req.session.save(() => {
+        req.session.fam_id = dbUserData.fam_id;
+        res.json(dbUserData);
       })
     }).then(() => res.status(200))
 

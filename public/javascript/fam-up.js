@@ -86,7 +86,7 @@ async function createFamFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
 
-        console.log('fam_id: ', fam_id)
+        //console.log('fam_id: ', fam_id)
 
 
         /*const userResponse = await fetch(`api/users/${session.user_id}`, {

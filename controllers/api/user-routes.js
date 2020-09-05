@@ -73,9 +73,11 @@ router.post('/', (req, res) => {
 		username: req.body.username,
 		user_password: req.body.user_password
 	}).then((dbUserData) => {
+		console.log("dbUserData.fam_id:",dbUserData.fam_id)
 		req.session.save(() => {
 			req.session.user_id = dbUserData.id;
 			req.session.username = dbUserData.username;
+			req.session.fam_id = dbUserData.fam_id;
 			req.session.loggedIn = true;
 
 			res.json(dbUserData);
