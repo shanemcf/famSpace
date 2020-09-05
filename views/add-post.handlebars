@@ -1,4 +1,18 @@
+<article class="row justify-content-center top-buffer">
+      <section class="card card-body col-xs-12 col-sm-9 col-md-6 text-center">
+            <h2 class="">Add a Post</h2>
+            <form class="new-post-form">
+                  <form action="/api/upload" class="dropzone" id="my-awesome-dropzone"></form>
+                  <div>
+                        <label class="card-subtitle mb-2 text-muted" for="caption">Caption</label>
+                        <textarea class="form-control" type="text" id="post-title" name="caption"
+                              placeholder="e.g. What a great vacation!"></textarea>
+                  </div>
+                  <button class="btn btn-primary mt-2" type="submit" id="add-post">Create</button>
+            </form>
+      </section>
+</article>
+
+
+<script src="/javascript/add-post.js"></script>
 <script src="dropzone-5.7.0/dist/dropzone.js"></script>
-<form action="/api/upload"
-      class="dropzone"
-      id="my-awesome-dropzone"></form>
