@@ -117,9 +117,9 @@ router.get('/', (req, res) => {
       {
         model: Contact,
         attributes: [
-          'id', 
-          'telephone', 
-          'address', 
+          'id',
+          'telephone',
+          'address',
           'user_id']
       }
     ]
@@ -138,5 +138,8 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
+
 
 module.exports = router;

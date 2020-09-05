@@ -1,11 +1,10 @@
 async function phoneFormHandler(event) {
     event.preventDefault();
 
-    const telephone = document.querySelector('#phone-dashboard').value.trim();
-    const id = session.user_id;
+    const telephone = document.querySelector('#phone-number-dashboard').value.trim();
 
     if (telephone) {
-        const response = await fetch(`/api/contact/${id}`, {
+        const response = await fetch(`/api/contacts/`, {
             method: 'put',
             body: JSON.stringify({
                 telephone
@@ -20,14 +19,14 @@ async function phoneFormHandler(event) {
         }
     }
 }
-
+/*
 async function emailFormHandler(event) {
     event.preventDefault();
 
     const email = document.querySelector('#email-dashboard').value.trim();
 
     if (email) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/users/', {
             method: 'put',
             body: JSON.stringify({
                 email,
@@ -42,16 +41,15 @@ async function emailFormHandler(event) {
         }
     }
 }
-
+*/
 async function addressFormHandler(event) {
     event.preventDefault();
 
     const addressStreet = document.querySelector('#address-dashboard-street').value.trim();
-    const addressStreetSub = document.querySelector('#address-dashboard-street').value.trim();
-    const addressCity = document.querySelector('#address-dashboard-street').value.trim();
-    const addressState = document.querySelector('#address-dashboard-street').value.trim();
-    const addressZip = document.querySelector('#address-dashboard-street').value.trim();
-    const id = session.user_id;
+    const addressStreetSub = document.querySelector('#address-dashboard-street-sub').value.trim();
+    const addressCity = document.querySelector('#address-dashboard-city').value.trim();
+    const addressState = document.querySelector('#address-dashboard-state').value.trim();
+    const addressZip = document.querySelector('#address-dashboard-zip').value.trim();
     let address = "";
 
     if(addressStreetSub){
@@ -62,7 +60,7 @@ async function addressFormHandler(event) {
     }  
 
     if (address) {
-        const response = await fetch(`/api/contact/${id}`, {
+        const response = await fetch(`/api/contacts/`, {
             method: 'put',
             body: JSON.stringify({
                 address
@@ -78,6 +76,6 @@ async function addressFormHandler(event) {
     }
 }
 
- document.querySelector('#update-phone-number').addEventListener('submit', phoneFormHandler);
- document.querySelector('#update-email').addEventListener('submit', emailFormHandler);
- document.querySelector('#update-address').addEventListener('submit', addressFormHandler);
+ document.querySelector('#update-phone-number').addEventListener('click', phoneFormHandler);
+ document.querySelector('#update-email').addEventListener('click', emailFormHandler);
+ document.querySelector('#update-address').addEventListener('click', addressFormHandler);

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { User, Contact, Post, Comment } = require('../../models');
 const userAuth = require('../../utils/auth'); // Authenticate user session middleware.
 
 
@@ -38,8 +38,8 @@ router.get('/:id', (req, res) => {
 			{
 				model: Comment,
 				attributes: [
-					'id', 
-					'comment_text', 
+					'id',
+					'comment_text',
 					'created_at'],
 				include: {
 					model: Post,
@@ -72,17 +72,28 @@ router.post('/', (req, res) => {
 		email: req.body.email,
 		username: req.body.username,
 		user_password: req.body.user_password
-	})
-		//
-		.then((dbUserData) => {
-			req.session.save(() => {
-				req.session.user_id = dbUserData.id;
-				req.session.username = dbUserData.username;
-				req.session.loggedIn = true;
+	}).then((dbUserData) => {
+		req.session.save(() => {
+			req.session.user_id = dbUserData.id;
+			req.session.username = dbUserData.username;
+			req.session.loggedIn = true;
 
-				res.json(dbUserData);
-			});
+			res.json(dbUserData);
 		});
+		console.log(dbUserData)
+		let telephone = "null";
+		let address = "null";
+
+		Contact.create({
+			telephone:telephone,
+			address:address,
+			user_id:dbUserData.id
+		})
+	}).then(() => res.status(200))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // PUT /api/users/1
@@ -104,15 +115,29 @@ router.put('/:id', (req, res) => {
 			console.log(err);
 			res.status(500).json(err);
 		});
-	
+
 });
 
-
+/*
+//PUT route to update user email
+router.put('/', (req, res) => {
+	Contact.update(req.body,{
+	  where: {
+		id: req.session.user_id
+	  }
+	})
+	  .then(() => res.status(200))
+	  .catch((err) => {
+		console.log(err);
+		res.status(500).json(err);
+	  });
+  });
+*/
 
 router.delete('/:id', (req, res) => {
 	Comment.destroy({
 		where: {
-      user_id: req.params.id
+			user_id: req.params.id
 		}
 	}).then(() => {
 		User.destroy({

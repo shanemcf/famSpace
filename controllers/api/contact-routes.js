@@ -1,13 +1,14 @@
 const router = require('express').Router();
 const { User, Contact } = require('../../models');
 const withAuth = require('../../utils/auth');
+const session = require('express-session');
 
-router.get('/:id', (req, res) => {
+router.get('/', (req, res) => {
   Contact.findOne({
-    where:{
-      id:req.body.id
+    where: {
+      user_id: req.session.user_id
     },
-    
+
     attributes: [
       'id',
       'telephone',
@@ -34,20 +35,19 @@ router.post('/', (req, res) => {
     });
 });
 
+
+//PUT route to update user phone number
 router.put('/', (req, res) => {
-  // check the session to verify user is logged in
-  if (req.session) {
-    Contact.update({
-      telephone: req.body.telephone,
-      address: req.body.address,
-      user_id: req.body.user_id
-    })
-      .then((dbContactData) => res.json(dbContactData))
-      .catch((err) => {
-        console.log(err);
-        res.status(400).json(err);
-      });
-  }
+  Contact.update(req.body,{
+    where: {
+      user_id: req.session.user_id
+    }
+  })
+    .then(() => res.status(200))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

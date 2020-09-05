@@ -25,31 +25,15 @@ async function signupFormHandler(event) {
                 user_password
             }),
             headers: { 'Content-Type': 'application/json' }
-        });
-        
-                let telephone = 'not entered yet';
-                let address = 'not entered yet';
-        
-                const setup = await fetch('/api/contacts', {
-                    method: 'post',
-                    body: JSON.stringify({
-                        telephone,
-                        address
-                    })
-                })
-        
-                if (response.ok) {
-                    if (setup.ok){
-                    document.location.replace('/');
-                    }
-                    else{
-                        alert(setup.statusText);
-                    }
-                } else {
-                    alert(response.statusText);
-                }
-                
+        })
+        if (response.ok) {
+            document.location.replace('/');
+        }
+
+    } else {
+        alert(response.statusText);
     }
+
 }
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);

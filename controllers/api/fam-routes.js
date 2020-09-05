@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// GET /api/fam/1 (retrieve one fam by id)
+// GET /api/fam/famKey (retrieve one fam by famKey)
 router.get('/:famKey', (req, res) => {
   Fam.findOne({
     where: {
