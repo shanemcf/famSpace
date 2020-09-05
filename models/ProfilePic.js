@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Profile extends Model { }
+class ProfilePic extends Model { }
 
-Profile.init(
+ProfilePic.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -21,7 +21,13 @@ Profile.init(
         key: 'id'
       }
     }
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'profilepic'
   }
 );
 
-module.express = router;
+module.exports = ProfilePic;

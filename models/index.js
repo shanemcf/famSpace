@@ -3,6 +3,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Contact = require('./Contact');
+const ProfilePic = require('./ProfilePic');
 
 
 
@@ -53,5 +54,10 @@ User.hasOne(Contact, {
   onDelete: 'SET NULL'
 });
 
+User.hasOne(ProfilePic,{
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
+})
 
-module.exports = { Fam, User, Post, Comment, Contact };
+
+module.exports = { Fam, User, Post, Comment, Contact, ProfilePic };

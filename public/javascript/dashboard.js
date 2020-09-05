@@ -19,29 +19,7 @@ async function phoneFormHandler(event) {
         }
     }
 }
-/*
-async function emailFormHandler(event) {
-    event.preventDefault();
 
-    const email = document.querySelector('#email-dashboard').value.trim();
-
-    if (email) {
-        const response = await fetch('/api/users/', {
-            method: 'put',
-            body: JSON.stringify({
-                email,
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        });
-
-        if (response.ok) {
-
-        } else {
-            alert(response.statusText);
-        }
-    }
-}
-*/
 async function addressFormHandler(event) {
     event.preventDefault();
 
@@ -52,12 +30,12 @@ async function addressFormHandler(event) {
     const addressZip = document.querySelector('#address-dashboard-zip').value.trim();
     let address = "";
 
-    if(addressStreetSub){
-        address = addressStreet + '|' + addressStreetSub + '|' + addressCity +'|' + addressState + '|' + addressZip;
+    if (addressStreetSub) {
+        address = addressStreet + '|' + addressStreetSub + '|' + addressCity + '|' + addressState + '|' + addressZip;
     }
-    else{
-        address = addressStreet + '|NA|' + addressCity +'|' + addressState + '|' + addressZip;
-    }  
+    else {
+        address = addressStreet + '|NA|' + addressCity + '|' + addressState + '|' + addressZip;
+    }
 
     if (address) {
         const response = await fetch(`/api/contacts/`, {
@@ -76,6 +54,5 @@ async function addressFormHandler(event) {
     }
 }
 
- document.querySelector('#update-phone-number').addEventListener('click', phoneFormHandler);
- //document.querySelector('#update-email').addEventListener('click', emailFormHandler);
- document.querySelector('#update-address').addEventListener('click', addressFormHandler);
+document.querySelector('#update-phone-number').addEventListener('click', phoneFormHandler);
+document.querySelector('#update-address').addEventListener('click', addressFormHandler);

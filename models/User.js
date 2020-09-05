@@ -71,12 +71,7 @@ User.init(
         model: 'fam',
         key: 'id'
       }
-    },
-    /*picture_id: {
-      type:DataTypes.STRING,
-      allowNull: true
-    }*/
-    
+    }
   },
   {
     hooks: {
