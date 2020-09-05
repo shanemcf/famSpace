@@ -6,48 +6,40 @@ router.get('/', (req, res) => {
 
   // Access our Fam model and run .findAll() method)
   Fam.findAll()
-    .then((dbFamData) => res.json(dbFamData))
+    .then((dbFamData) => {
+      console.log(dbFamData)
+      res.json(dbFamData)})
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-
-// // GET /api/fam/1 (retrieve one fam by id)
-// router.get('/:id', (req, res) => {
-//   User.findOne({
-//     where: {
-//       id: req.params.id
-//     }
-//   })
-//     .then((dbFamData) => {
-//       if (!dbFamData) {
-//         res.status(404).json({ message: 'Family not found.' });
-//         return;
-//       }
-//       res.json(dbFamData);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
-// GET /api/fam/name (retrieve one id by fam)
-router.get('/:fam', (req, res) => {
+// GET /api/fam/1 (retrieve one fam by id)
+router.get('/:famKey', (req, res) => {
   Fam.findOne({
     where: {
-      famKey: req.params.fam
+      famKey: req.params.famKey
     }
   })
     .then((dbFamData) => {
+      //console.log('dbFamData:', dbFamData);
       if (!dbFamData) {
         res.status(404).json({ message: 'Family not found.' });
         return;
       }
-      res.json(dbFamData);
-    })
+      return dbFamData.get({ plain: true })
+    }).then((famObj) => {
+      //console.log('famObj: ', famObj);
+      return User.update({
+        fam_id: famObj.id
+      }, 
+      {
+        where: {
+          id: req.session.user_id
+        },
+      })
+    }).then(() => res.status(200))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

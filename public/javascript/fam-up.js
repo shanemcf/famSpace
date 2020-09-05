@@ -45,16 +45,14 @@ async function joinFamFormHandler(event) {
     event.preventDefault();
 
     const famId = document.querySelector('#fam-key').value.trim();
+    //console.log("famId: ",famId)
 
     if (famId) {
-        const response = await fetch('/api/fams/join', {
-            method: 'post',
-            body: JSON.stringify({
-                famId
-            }),
+        const response = await fetch(`/api/fams/${famId}`, {
+            method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });
-
+        //console.log('response: ', response);
         if (response.ok) {
             document.location.replace('/');
         } else {
@@ -76,9 +74,9 @@ function famKeyPPopulator(event){
 
 async function createFamFormHandler(event) {
     event.preventDefault();
-    console.log('Arrived at createFamFormHandler')
+    //console.log('Arrived at createFamFormHandler')
     const generatedFamKey = document.querySelector('#generated-key').textContent;
-    console.log('This is the generatedFamKey: ', generatedFamKey)
+    //console.log('This is the generatedFamKey: ', generatedFamKey)
     if (generatedFamKey) {
         const famResponse = await fetch('/api/fams', {
             method: 'post',
