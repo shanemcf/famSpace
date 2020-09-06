@@ -5,8 +5,8 @@ const { Post, User, ProfilePic } = require('../../models');
 
 router.post("/profilePic", cors(), (req, res) => {
   console.log(req.files)
-  try{
-  if (!req.files) {
+  try {
+    if (!req.files) {
 
       res.status(500).json({
         status: 500,
@@ -26,16 +26,16 @@ router.post("/profilePic", cors(), (req, res) => {
         url: photoAddress,
         user_id: req.session.user_id
       })
-      
+
     }
   }
-  catch(err){
+  catch (err) {
     console.log('HERE')
-      res.status(500).json({error: err});
+    res.status(500).json({ error: err });
   }
 })
 
-router.post("/newPost", cors(), (req, res) => {
+router.post("/localPost", cors(), (req, res) => {
   try {
     if (!req.files) {
       res.status(500).json({
@@ -55,32 +55,61 @@ router.post("/newPost", cors(), (req, res) => {
       Post.create({
         imageURL: photoAddress,
         user_id: req.session.user_id,
-      }).then((newPost)=>{
-        console.log('newPost: ',newPost)
+      }).then((newPost) => {
+        console.log('newPost: ', newPost)
         User.findOne({
-          where:{
-            id:newPost.user_id
+          where: {
+            id: newPost.user_id
           }
-        }).then((userObj)=>{
-          console.log('userObj: ',userObj)
+        }).then((userObj) => {
+          console.log('userObj: ', userObj)
           return Post.update({
-            fam_id:userObj.fam_id
+            fam_id: userObj.fam_id
           },
-          {
-            where:{
-              imageURL: photoAddress
-            }
-          })
-      }).then((updatedPost) => {
-        console.log("updatedPost: ", updatedPost)
-      res.status(200)})
+            {
+              where: {
+                imageURL: photoAddress
+              }
+            })
+        }).then((updatedPost) => {
+          console.log("updatedPost: ", updatedPost)
+          res.status(200)
+        })
       })
-    }    
-      
+    }
+
   }
   catch (err) {
     res.status(500).json({ error: err });
   }
+})
+router.post("/newPost", (req, res) => {
+console.log('req.body: ', req.body)
+console.log('req.body.cloudinaryURL:',req.body.cloudinaryURL);
+  Post.create({
+    imageURL: req.body.cloudinaryURL,
+    user_id: req.session.user_id
+  }).then((newPost) => {
+    console.log('newPost: ', newPost)
+    User.findOne({
+      where: {
+        id: newPost.user_id
+      }
+    }).then((userObj) => {
+      console.log('userObj: ', userObj)
+      return Post.update({
+        fam_id: userObj.fam_id
+      },
+        {
+          where: {
+            imageURL: req.cloudinaryURL
+          }
+        })
+    }).then((updatedPost) => {
+      console.log("updatedPost: ", updatedPost)
+      res.status(200)
+    })
+  })
 })
 
 module.exports = router;

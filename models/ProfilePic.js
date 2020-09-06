@@ -1,6 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+//FOR THE FUTURE
+//TODO: ADD THIS
+
 class ProfilePic extends Model { }
 
 ProfilePic.init(
