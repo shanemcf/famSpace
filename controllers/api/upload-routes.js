@@ -51,24 +51,32 @@ router.post("/newPost", cors(), (req, res) => {
 
       //Use the mv() method to place the file in upload directory (i.e. "uploads")
       image.mv(photoAddress)
-    }
-    User.get({
-      fam_id
-    },
-      {
-        where: {
-          id: req.session.user_id
-        }
-        
-      }
-    ).then((fam_id, photoAddress)=>{
+
       Post.create({
         imageURL: photoAddress,
         user_id: req.session.user_id,
-        fam_id: fam_id
+      }).then((newPost)=>{
+        console.log('newPost: ',newPost)
+        User.findOne({
+          where:{
+            id:newPost.user_id
+          }
+        }).then((userObj)=>{
+          console.log('userObj: ',userObj)
+          return Post.update({
+            fam_id:userObj.fam_id
+          },
+          {
+            where:{
+              imageURL: photoAddress
+            }
+          })
+      }).then((updatedPost) => {
+        console.log("updatedPost: ", updatedPost)
+      res.status(200)})
       })
-    })
-      .then(() => res.status(200))
+    }    
+      
   }
   catch (err) {
     res.status(500).json({ error: err });

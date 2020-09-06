@@ -13,11 +13,11 @@
 
         <script src="/dropzone-5.7.0/dist/dropzone.js"></script>
         <form action="/api/upload/profilePic" class="dropzone" id="my-awesome-dropzone"></form>
-        {{!-- {{#if user.profilePic}} --}}
+        
         <div class="profilePic">
-            <h1> 1{{user.profilepic.id}}</h1>
+            <img src={{user.profilepic.url}}/>
         </div>
-        {{!-- {{/if}} --}}
+
 
         <section class="card mx-auto mt-4">
             <div class="card-body">
@@ -30,7 +30,7 @@
                     <input type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd"
                         id="phone-number-dashboard" placeholder={{user.contact.telephone}} />
                     <div class="mt-2">
-                        <button class="btn btn-success" type="submit" id="update-phone-number">
+                        <button class="btn btn-success" type="click" id="update-phone-number">
                             Update Phone Number
                         </button>
                     </div>

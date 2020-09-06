@@ -55,4 +55,4 @@ async function addressFormHandler(event) {
 }
 
 document.querySelector('#update-phone-number').addEventListener('click', phoneFormHandler);
-document.querySelector('#update-address').addEventListener('submit', addressFormHandler);
+document.querySelector('#update-address').addEventListener('click', addressFormHandler);

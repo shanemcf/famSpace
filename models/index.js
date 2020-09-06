@@ -59,6 +59,11 @@ User.hasOne(ProfilePic,{
   onDelete: 'SET NULL'
 });
 
+ProfilePic.belongsTo(User,{
+  foreignKey:'user_id',
+  onDelete:'SET NULL'
+})
+
 Post.belongsTo(Fam,{
   through: User,
   foreignKey:'fam_id'
