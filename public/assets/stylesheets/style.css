@@ -105,12 +105,3 @@ footer {
 .birthday-entry {
   justify-content: space-around;
 }
-
-.dropzone {
-  
-} 
-
-.dropzone-custom{
-  width: 200px !important;
-  height: 200px !important;
-}

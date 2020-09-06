@@ -1,8 +1,5 @@
-//const sequelize = require("../../config/connection");
 
 let displayKeyEl = document.querySelector('#generated-key');
-
-//let { famKey } = require ('./famKey');
 
 const adj = ['adaptable', 'adventurous', 'affectionate', 'ambitious', 'amiable',
   'compassionate', 'considerate', 'courageous', 'courteous', 'diligent',
@@ -85,18 +82,6 @@ async function createFamFormHandler(event) {
             }),
             headers: { 'Content-Type': 'application/json' }
         });
-
-        //console.log('fam_id: ', fam_id)
-
-
-        /*const userResponse = await fetch(`api/users/${session.user_id}`, {
-            method: 'put',
-            body:JSON.stringify({
-
-                
-            })
-        })*/
-
 
         console.log('This is the response: ', famResponse)
         if (famResponse.ok) {
