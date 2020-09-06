@@ -8,9 +8,6 @@ const session = require('express-session');
 const helpers = require('./utils/helpers');
 var cloudinary = require('cloudinary').v2;
 
-var CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/famspace/upload";
-var CLOUDINARY_UPLOAD_PRESET = "iftxut2f";
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
