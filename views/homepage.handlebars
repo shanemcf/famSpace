@@ -1,0 +1,32 @@
+<ol class="post-list list-unstyled">
+  {{#each posts as |post|}}
+  <li>
+    <article class="post top-buffer">
+      <div class="col-sm-8 col-md-6 mx-auto">
+        <div class="card">
+          <img class="card-img-top" src={{imageURL}} alt="Card image cap">
+          <div class="card-body mx-auto meta">
+            <p class="card-text"><small class="text-muted">
+                <i>posted by
+                  <span style="font-weight:bolder">
+                    {{user.username}}
+                  </span>
+                  on
+                  {{format_date created_at}}
+                </i>
+                <br>
+            </p></small></p>
+            <p class="card-text">{{caption}}</p>
+          </div>
+          <div class="mx-auto meta">
+            <a class="stretched-link" href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </li>
+  {{/each}}
+</ol>
+
+
+<script src="/javascript/comment.js"></script>

@@ -1,0 +1,135 @@
+<article class="row">
+    <div class="col-md-4 col-xs-10">
+        <section>
+            {{!-- <div>
+                <img src="assets/images/3.jpg" alt="Card image cap" class="top-buffer">
+            </div> --}}
+            {{#if loggedIn}}
+            <div class="pt-4">
+                <h2> Hi, {{user.first_name}}</h2>
+            </div>
+            {{/if}}
+        </section>
+
+        {{!-- <script src="/dropzone-5.7.0/dist/dropzone.js"></script>
+        <form action="/api/upload/profilePic" class="dropzone" id="my-awesome-dropzone"></form>
+        
+        <div class="profilePic">
+            <img src="{{}}"/>
+        </div> --}}
+
+
+        <section class="card mx-auto mt-4">
+            <div class="card-body">
+                <form class="dash-form">
+                    <h3>Edit Your Contact Information</h3>
+
+                    <br>
+
+                    <label for="phone-number-dashboard">Phone Number</label>
+                    <input type="text" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd"
+                        id="phone-number-dashboard" placeholder={{user.contact.telephone}} />
+                    <div class="mt-2">
+                        <button class="btn btn-success" type="click" id="update-phone-number">
+                            Update Phone Number
+                        </button>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label class="mt-3" for="address-dashboard-street">Street Address</label>
+                        <input class="form-control" type="text" placeholder="Street" id="address-dashboard-street" />
+                    </div>
+
+                    <label class="mt-3" for="address-dashboard-street-sub">Apt or Ste</label>
+                    <input class="form-control" type="text" placeholder="Apartment" id="address-dashboard-street-sub" />
+
+
+                    <label class="mt-3" for="address-dashboard-city">City</label>
+                    <input class="form-control" type="text" placeholder="City" id="address-dashboard-city" />
+
+
+                    <label class="mt-3" for="address-dashboard-state">State</label>
+                    <div class="dropdown">
+                        <select class="btn btn-secondary dropdown-toggle" id="address-dashboard-state">
+                            <option value="" disabled selected>Select Your State</option>
+                            <option value="AL">AL</option>
+                            <option value="AK">AK</option>
+                            <option value="AZ">AZ</option>
+                            <option value="AR">AR</option>
+                            <option value="CA">CA</option>
+                            <option value="CO">CO</option>
+                            <option value="CT">CT</option>
+                            <option value="DE">DE</option>
+                            <option value="DC">DC</option>
+                            <option value="FL">FL</option>
+                            <option value="GA">GA</option>
+                            <option value="HI">HI</option>
+                            <option value="ID">ID</option>
+                            <option value="IL">IL</option>
+                            <option value="IN">IN</option>
+                            <option value="IA">IA</option>
+                            <option value="KS">KS</option>
+                            <option value="KY">KY</option>
+                            <option value="LA">LA</option>
+                            <option value="ME">ME</option>
+                            <option value="MD">MD</option>
+                            <option value="MA">MA</option>
+                            <option value="MI">MI</option>
+                            <option value="MO">MO</option>
+                            <option value="MT">MT</option>
+                            <option value="NE">NE</option>
+                            <option value="NV">NV</option>
+                            <option value="NH">NH</option>
+                            <option value="NJ">NJ</option>
+                            <option value="NM">NM</option>
+                            <option value="NY">NY</option>
+                            <option value="NC">MC</option>
+                            <option value="ND">ND</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option>
+                            <option value="OR">OR</option>
+                            <option value="PA">PA</option>
+                            <option value="PR">PR</option>
+                            <option value="RI">RI</option>
+                            <option value="SC">SC</option>
+                            <option value="SD">SD</option>
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option>
+                            <option value="UT">UT</option>
+                            <option value="VT">MD</option>
+                            <option value="VA">VA</option>
+                            <option value="VI">VI</option>
+                            <option value="WA">WA</option>
+                            <option value="WV">WV</option>
+                            <option value="WI">WI</option>
+                            <option value="WY">WY</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label for="address-dashboard-zip">Zip Code</label>
+                        <input class="form-control" type="text" placeholder="Zip Code" id="address-dashboard-zip" />
+                        <button class="btn btn-success mt-2" type="submit" id="update-address">Update</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        </section>
+    </div>
+
+    <section class="col-md-4 col-xs-10 mx-auto">
+        <div class="mt-4 card">
+            <h3 class="card-header">Keep in touch with {{user.first_name}}</h3>
+            <h5 class="card-header">Email Address</h5>
+            <p class="card-body" id="email-dashboard">{{user.email}} </p>
+        </div>
+    </section>
+
+
+</article>
+
+
+
+<script src="/javascript/dashboard.js"></script>

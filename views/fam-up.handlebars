@@ -1,0 +1,35 @@
+<section class="row justify-content-center top-buffer">
+    <div class="card col-xs-12 col-sm-8 col-md-4 text-center">
+        <div class="card-body">
+            <form class="is-fam-form">
+                <h4>Join a fam</h4>
+                <input type="text" class="form-control" placeholder="Enter your famKey" id="fam-key" />
+                <br>
+                <button class="btn" type="submit" id="join-fam">Join</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="row top-buffer justify-content-center">
+    <div class="card col-xs-12 col-md-4 text-center">
+        <div class="card-body">
+            <form class="new-fam-form">
+                <h4>Create a fam</h4>
+                <div>
+                    <input class="form-control" type="text" placeholder="What's your family's name?" id="fam-name" />
+                    <br>
+                    <button class="btn" type="submit" id="generate-key">Generate a famKey</button>
+                </div>
+                <br>
+                <p id="generated-key">Your Key</p>
+
+                <button class="btn" type="button" id="create-fam">Done</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<script src="/javascript/fam-up.js"></script>
+<script type="module" src="/javascript/famKey.js"></script>

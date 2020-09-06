@@ -1,0 +1,111 @@
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  /* color: rgb(244, 244, 244); */
+  background-image: url("../images/blu_stripes_@2X.png");
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: rgb(72, 72, 72, .50);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 40px;
+  background-image: url("../images/blu_stripes_@2X.png");
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+footer {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+}
+
+.top-buffer { 
+  margin-top: 1.5em; 
+}
+
+.sm-top-buffer { 
+  margin-top: .5em; 
+}
+
+.sm-bottom-buffer {
+  margin-bottom: 10px;
+}
+
+.navbar-brand {
+  font-size: 3em;
+  font-family: 'Leckerli One';
+}
+
+.nav-item {
+  margin-right: 1em;
+  align-self: flex-end;
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: .5%;
+  opacity: .6;
+}
+
+.comments {
+  overflow: auto;
+  max-height: 300px;
+  max-width: 95%;
+  padding-right: 0px;
+  opacity: 90%;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.container {
+  margin-left: auto;
+}
+
+.pull-right {
+  float: right;
+}
+
+.month {
+  max-width: 35%;
+}
+
+.day {
+  max-width: 15%;
+}
+
+.year {
+  max-width: 25%;
+}
+
+.formfield {
+  max-width: 75%
+}
+
+.birthday-entry {
+  justify-content: space-around;
+}
+
+/* .dropzone {
+  width: 200px;
+} */

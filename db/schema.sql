@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS famspace_db;
+CREATE DATABASE famspace_db;

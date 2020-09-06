@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>famSpace</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="/assets/stylesheets/style.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+
+    {{!-- General page font --}}
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    
+    {{!-- Brand font --}}
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <nav class="navbar justify-content-between navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">famSpace</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav pull-right">
+                {{#if loggedIn}}
+                <li class="nav-item active">
+                    <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                {{/if}}
+                <li class="nav-item">
+                    <a class="nav-link btn-sm active" href="/login">Login</a>
+                </li>
+                {{#if loggedIn}}
+                <li class="nav-item">
+                    <button class="nav-link" id="logout"
+                        style="border:none;background-color:transparent">Logout</button>
+                </li>
+                {{/if}}
+                {{#if loggedIn}}
+                <li class="nav-item">
+                    <button class="nav-link btn-sm" id="add-post-nav"
+                        style="border:none;background-color:transparent">Create a Post</button>
+                </li>
+                {{/if}}
+                {{#if loggedIn}}
+                <li class="nav-item">
+                    <button class="nav-link btn-sm" id="fam-nav" style="border:none;background-color:transparent">Join
+                        or Create a Fam</button>
+                </li>
+                {{/if}}
+                {{#if loggedIn}}
+                <li class="nav-item">
+                    <button class="nav-link btn-sm" id="events-nav"
+                        style="border:none;background-color:transparent">View Upcoming Events</button>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        {{{ body }}}
+    </main>
+
+    <footer class="mt-5">
+        famSpace &#169;2020
+    </footer>
+
+    <script src="/javascript/logout.js"></script>
+    <script src="/javascript/home-nav.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<article class="post top-buffer row">
+  <div class="col-sm-6">
+    <div class="card">
+      <img class="card-img-top" src="{{post.imageURL}}" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text"><small class="text-muted">
+            <i>posted by
+              <span style="font-weight:bolder">
+                {{post.user.username}}
+              </span>
+              on
+              {{format_date post.created_at}}
+            </i>
+            <br>
+        </p></small></p>
+        <p class="card-text">{{caption}}</p>
+      </div>
+    </div>
+    {{#if loggedIn}}
+    <div class="card" style="opacity:75%">
+      <form class="card-body comment-form">
+        <div>
+          <textarea name="comment-body" class="mb-2 mt-2 form-control">
+        </textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Add a Comment</button>
+      </form>
+    </div>
+    {{/if}}
+  </div>
+
+  <section class="comments sm-top-buffer col-sm-6 b-2">
+    <div class="card bg-light" style="border-radius:0%">
+      <div>
+        {{#each post.comments}}
+        <section class="comment">
+          <div class="meta card-header" style="padding:.25em">
+            {{user.username}} on {{format_date created_at}}
+          </div>
+          <div class="text">
+            {{comment_text}}
+          </div>
+        </section>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+</article>
+
+<script src="/javascript/comment.js"></script>
