@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
       {
         where: {
           id: req.session.user_id
-        },
+        }
       })
     }).then(() => res.status(200))
 

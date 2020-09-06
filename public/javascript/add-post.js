@@ -1,8 +1,6 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  console.log('The eventListener is working')
-
   const caption = document.querySelector('textarea[name="caption"]').value;
   const imageURL = 'www.url.com'
 

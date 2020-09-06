@@ -57,7 +57,11 @@ User.hasOne(Contact, {
 User.hasOne(ProfilePic,{
   foreignKey: 'user_id',
   onDelete: 'SET NULL'
-})
+});
 
+Post.belongsTo(Fam,{
+  through: User,
+  foreignKey:'fam_id'
+});
 
 module.exports = { Fam, User, Post, Comment, Contact, ProfilePic };

@@ -12,8 +12,12 @@
         </section>
 
         <script src="/dropzone-5.7.0/dist/dropzone.js"></script>
-        <form action="/api/upload" class="dropzone" id="my-awesome-dropzone"></form>
-
+        <form action="/api/upload/profilePic" class="dropzone" id="my-awesome-dropzone"></form>
+        {{!-- {{#if user.profilePic}} --}}
+        <div class="profilePic">
+            <h1> 1{{user.profilepic.id}}</h1>
+        </div>
+        {{!-- {{/if}} --}}
 
         <section class="card mx-auto mt-4">
             <div class="card-body">
