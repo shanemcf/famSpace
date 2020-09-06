@@ -55,9 +55,9 @@ myDropzone.on('success', async function (file, response) {
   if (cloudinaryURL) {
     const response = await fetch('/api/upload/newPost', {
       method: 'POST',
-         body: {
-           cloudinaryURL:cloudinaryURL
-         },
+         body: JSON.stringify({
+           cloudinaryURL
+         }),
          headers: {
            'Content-Type': 'application/json'
          } 

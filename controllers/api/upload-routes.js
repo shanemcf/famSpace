@@ -85,8 +85,8 @@ router.post("/localPost", cors(), (req, res) => {
 })
 router.post("/newPost", (req, res) => {
 console.log('req.body: ', req.body)
-//console.log('req.body.cloudinaryURL:',req.body.cloudinaryURL);
-/*  Post.create({
+console.log('req.body.cloudinaryURL:',req.body.cloudinaryURL);
+  Post.create({
     imageURL: req.body.cloudinaryURL,
     user_id: req.session.user_id
   }).then((newPost) => {
@@ -109,7 +109,7 @@ console.log('req.body: ', req.body)
       console.log("updatedPost: ", updatedPost)
       res.status(200)
     })
-  })*/
+  })
 })
 
 module.exports = router;
