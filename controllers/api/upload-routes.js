@@ -17,10 +17,10 @@ router.post("/profilePic", cors(), (req, res) => {
       let image = req.files.file;
       let imageName = req.files.file.name;
 
-      let photoAddress = './uploads/' + imageName
+      let photoAddress = '/uploads/' + imageName
 
       //Use the mv() method to place the file in upload directory (i.e. "uploads")
-      image.mv(photoAddress);
+      image.mv('./public/' + photoAddress);
 
       ProfilePic.create({
         url: photoAddress,
@@ -47,10 +47,10 @@ router.post("/newPost", cors(), (req, res) => {
       let image = req.files.file;
       let imageName = req.files.file.name;
 
-      let photoAddress = './uploads/' + imageName
+      let photoAddress = '/uploads/' + imageName
 
       //Use the mv() method to place the file in upload directory (i.e. "uploads")
-      image.mv(photoAddress)
+      image.mv('/public/' + photoAddress)
 
       Post.create({
         imageURL: photoAddress,

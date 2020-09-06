@@ -1,9 +1,9 @@
 <article class="row">
     <div class="col-md-4 col-xs-10">
         <section>
-            <div>
+            {{!-- <div>
                 <img src="assets/images/3.jpg" alt="Card image cap" class="top-buffer">
-            </div>
+            </div> --}}
             {{#if loggedIn}}
             <div class="pt-4">
                 <h2> Hi, {{user.first_name}}</h2>
@@ -11,12 +11,12 @@
             {{/if}}
         </section>
 
-        <script src="/dropzone-5.7.0/dist/dropzone.js"></script>
+        {{!-- <script src="/dropzone-5.7.0/dist/dropzone.js"></script>
         <form action="/api/upload/profilePic" class="dropzone" id="my-awesome-dropzone"></form>
         
         <div class="profilePic">
-            <img src={{user.profilepic.url}}/>
-        </div>
+            <img src="{{}}"/>
+        </div> --}}
 
 
         <section class="card mx-auto mt-4">
